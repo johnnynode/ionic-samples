@@ -5,7 +5,7 @@ angular.module('chats.route', ['chats.controller', 'starter.services.chats'])
                 url: '/chats',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'areas/chats/chats.html',
+                        templateUrl: 'pages/chats/chats.html',
                         controller: 'ChatsCtrl'
                     }
                 }

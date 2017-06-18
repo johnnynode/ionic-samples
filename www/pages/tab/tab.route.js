@@ -4,7 +4,7 @@ angular.module('tab.route', ['tab.controller'])
             .state('tab', {
                 url: '/tab',
                 abstract: true,
-                templateUrl: 'areas/tab/tab.html',
+                templateUrl: 'pages/tab/tab.html',
                 controller: 'TabCtrl'
             })
     });

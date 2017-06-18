@@ -5,7 +5,7 @@ angular.module('dash.route', ['dash.controller'])
                 url: '/dash',
                 views: {
                     'tab-dash': {
-                        templateUrl: 'areas/dash/dash.html',
+                        templateUrl: 'pages/dash/dash.html',
                         controller: 'DashCtrl'
                     }
                 }
