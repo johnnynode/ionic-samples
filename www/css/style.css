@@ -634,7 +634,6 @@ ion-nav-bar.hide {
 }
 
 ion-header-bar.bar .title {
-    padding: 0 40px;
     box-sizing: border-box;
     white-space: nowrap;
     overflow: hidden;
@@ -654,4 +653,19 @@ ion-header-bar.bar .title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.tabs {
+    border: none;
+}
+
+.item-avatar,
+.item-avatar .item-content,
+.item-avatar-left,
+.item-avatar-left .item-content {
+    min-height: auto;
+}
+
+.item-complex.item-icon-right .item-content {
+    min-height: auto;
 }
