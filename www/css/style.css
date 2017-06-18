@@ -669,3 +669,21 @@ ion-header-bar.bar .title {
 .item-complex.item-icon-right .item-content {
     min-height: auto;
 }
+
+.outer-pages .load-progress {
+    width: 0;
+    height: 2px;
+    position: absolute;
+    z-index: 999999;
+    top: 0;
+    background-color: #00b100;
+    transition: width 3s ease 0s;
+    -webkit-transition: width 3s ease 0s;
+}
+
+.outer-pages iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}

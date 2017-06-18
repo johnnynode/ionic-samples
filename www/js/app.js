@@ -3,6 +3,7 @@ angular.module('ionic-samples', [
         'route',
         'config',
         'utils',
+        'directives',
         'ionic-native-transitions',
         'ngCordova',
         'ngCookies'
