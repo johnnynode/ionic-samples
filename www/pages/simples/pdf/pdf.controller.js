@@ -1,2 +1,9 @@
 angular.module('simples.pdf.controller', [])
-    .controller('PdfCtrl', ['$scope', function($scope) {}]);
+    .controller('PdfCtrl', [
+        '$scope',
+        'appUtils',
+        function($scope, appUtils) {
+
+
+        }
+    ]);

@@ -1,7 +1,8 @@
 angular.module('ionic-samples', [
         'ionic',
         'route',
-        'config'
+        'config',
+        'utils'
     ])
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
