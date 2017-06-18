@@ -1,9 +1,9 @@
 angular.module('simples.pdf.controller', [])
     .controller('PdfCtrl', [
         '$scope',
+        '$sce',
         'appUtils',
-        function($scope, appUtils) {
-
-
+        function($scope, $sce, appUtils) {
+            $scope.pdfSrc = $sce.trustAsResourceUrl('https://mozilla.github.io/pdf.js/web/viewer.html');
         }
     ]);

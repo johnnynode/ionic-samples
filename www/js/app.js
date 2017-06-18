@@ -2,7 +2,10 @@ angular.module('ionic-samples', [
         'ionic',
         'route',
         'config',
-        'utils'
+        'utils',
+        'ionic-native-transitions',
+        'ngCordova',
+        'ngCookies'
     ])
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
