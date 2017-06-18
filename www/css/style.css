@@ -330,37 +330,8 @@ ion-nav-bar.hide {
 
 /* 去除默认样式 */
 
-ion-header-bar.bar .title {
-    margin: 0;
-    background-color: #808080;
-    font-weight: 400;
-    color: #fff;
-    left: 0 !important;
-    right: 0 !important;
-    height: 44px;
-}
-
-ion-view ion-nav-bar .bar {
-    background-image: none !important;
-    border: none !important;
-}
-
-ion-header-bar {
-    padding-left: 0;
-    padding-right: 0;
-}
-
 
 /* 去除默认样式 */
-
-ion-view ion-nav-bar .bar {
-    background-image: none !important;
-    border: none !important;
-}
-
-ion-nav-bar .title {
-    background-color: #757575;
-}
 
 ion-nav-bar ion-header-bar {
     padding-left: 0;
@@ -581,59 +552,6 @@ ion-header-bar .go-back:before {
 [nav-view-transition="ios"][nav-view-direction="forward"],
 [nav-view-transition="ios"][nav-view-direction="back"] {
     background-color: transparent;
-}
-
-.bar.bar-stable .title {
-    color: #fff;
-    padding: 0 50px;
-}
-
-
-/* 通用加载loading */
-
-.common-spinner-wrap {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background-color: rgba(0, 0, 0, .4);
-    width: .8rem;
-    height: .8rem;
-    text-align: center;
-    color: #fff;
-    border-radius: 10px;
-    z-index: 9;
-}
-
-.common-spinner-wrap ion-spinner {
-    stroke: #e6e6e6;
-}
-
-@-webkit-keyframes sk-waveStretchDelay {
-    0%,
-    40%,
-    100% {
-        -webkit-transform: scaleY(0.4);
-        transform: scaleY(0.4);
-    }
-    20% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-    }
-}
-
-@keyframes sk-waveStretchDelay {
-    0%,
-    40%,
-    100% {
-        -webkit-transform: scaleY(0.4);
-        transform: scaleY(0.4);
-    }
-    20% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-    }
 }
 
 
