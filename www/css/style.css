@@ -1,1 +1,739 @@
-/* Empty. Add your own CSS if you like */
+html,
+body,
+article,
+aside,
+audio,
+canvas,
+caption,
+details,
+div,
+figure,
+footer,
+header,
+iframe,
+img,
+mark,
+menu,
+nav,
+object,
+section,
+span,
+summary,
+table,
+tbody,
+td,
+tfoot,
+thead,
+tr,
+video,
+a,
+button,
+b,
+u,
+i,
+ins,
+em,
+ol,
+ul,
+li,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-style: normal;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+    background-color: #fff;
+}
+
+body {
+    font-size: .12rem;
+    font-family: "Droid Sans", "Droid Sans Fallback", PingFangSC-Regular, Helvetica-Neue, Helvetica, Arial, sans-serif;
+    color: #666;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+input,
+textarea {
+    border: 0;
+    resize: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+button {
+    outline: none;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: ' ';
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ellipsis-two {
+    display: -webkit-box !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    white-space: normal !important;
+}
+
+.text-indent {
+    text-indent: 2em;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+:focus {
+    outline: 0
+}
+
+html {
+    font-size: 100px;
+}
+
+@media (min-width: 320px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media (min-width: 360px) {
+    html {
+        font-size: 112.5px;
+    }
+}
+
+@media (min-width: 400px) {
+    html {
+        font-size: 125px;
+    }
+}
+
+
+/* 0.5px线条 */
+
+.bd-l,
+.bd-r,
+.bd-b,
+.bd-t,
+.bd-all {
+    position: relative;
+}
+
+.bd-l::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-image: -webkit-linear-gradient(270deg, #e0e0e0 50%, transparent 50%);
+    background-image: linear-gradient(180deg, #e0e0e0 50%, transparent 50%);
+}
+
+.bd-r::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-image: -webkit-linear-gradient(180deg, #e0e0e0 50%, transparent 50%);
+    background-image: linear-gradient(270deg, #e0e0e0 50%, transparent 50%);
+}
+
+.bd-t::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #e0e0e0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.bd-b::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #e0e0e0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.bd-all::after {
+    content: ' ';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #d3d3d3;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(.5, .5);
+    -webkit-transform: scale(.5, .5);
+}
+
+
+/* 竖向居中 */
+
+.vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+
+/* 横向居中 */
+
+.horizontal-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
+
+
+/* 横竖居中 */
+
+.center-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
+
+
+/* 左右margin 10 */
+
+.mlr10 {
+    margin: 0 10px 0 10px;
+}
+
+
+/* 高度100% 百分数用_ px不用_ */
+
+.h_100 {
+    height: 100%;
+}
+
+.f-10 {
+    font-size: 10px !important;
+}
+
+.f-12 {
+    font-size: 12px !important;
+}
+
+.f-13 {
+    font-size: 13px !important;
+}
+
+.f-14 {
+    font-size: 14px !important;
+}
+
+.c-888 {
+    color: #888 !important;
+}
+
+.c-999 {
+    color: #999 !important;
+}
+
+.c-666 {
+    color: #666 !important;
+}
+
+.c-333 {
+    color: #333 !important;
+}
+
+.f-border {
+    font-weight: 500 !important;
+    font-size: 13px;
+}
+
+.f-normal {
+    font-weight: normal !important;
+}
+
+
+/* 头部公用样式 */
+
+
+/* ionic 过渡时的突然消失的bug */
+
+ion-nav-bar.hide {
+    display: block !important;
+}
+
+
+/* 去除默认样式 */
+
+ion-header-bar.bar .title {
+    margin: 0;
+    background-color: #808080;
+    font-weight: 400;
+    color: #fff;
+    left: 0 !important;
+    right: 0 !important;
+    height: 44px;
+}
+
+ion-view ion-nav-bar .bar {
+    background-image: none !important;
+    border: none !important;
+}
+
+ion-header-bar {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* 去除默认样式 */
+
+ion-view ion-nav-bar .bar {
+    background-image: none !important;
+    border: none !important;
+}
+
+ion-nav-bar .title {
+    background-color: #757575;
+}
+
+ion-nav-bar ion-header-bar {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+ion-nav-bar .push-icon {
+    display: block;
+    margin: 7px 7px 0 0;
+    width: 24px;
+    height: 22px;
+    background: url("../images/push-icon.png") no-repeat;
+    background-size: 100% auto;
+}
+
+.header-search .search-icon,
+ion-header-bar .search-icon-right {
+    display: inline-block;
+    vertical-align: top;
+    margin: 7px 0 0 7px;
+    width: 17px;
+    height: 17px;
+    background: url(../images/search-icon.png) no-repeat center center;
+    background-size: 100% auto;
+}
+
+.header-search {
+    height: 100%;
+    position: relative;
+}
+
+.header-search.cur {
+    margin-right: 36px;
+}
+
+.header-search.cur ~ .cancel-search {
+    font-size: 16px;
+    opacity: 1;
+}
+
+.header-search .header-search-inner {
+    height: 30px;
+    line-height: 30px;
+    background-color: #dadada;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+}
+
+.header-search .header-search-inner:before {
+    position: absolute;
+    content: ' ';
+}
+
+ion-header-bar .search-icon-right {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.header-search .search-input {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    padding: 0 0 0 27px !important;
+    font-size: 14px;
+    top: 0;
+    color: #fff;
+    background-color: transparent;
+}
+
+.header-search .search-input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.header-search .clear-btn {
+    width: 16px;
+    height: 16px;
+    background: url(../images/icon-clear-close.png) no-repeat 0 0;
+    background-size: 100% auto;
+    display: none;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
+
+.header-search-wrap {
+    height: 44px;
+    background-color: #808080;
+}
+
+.header-search-wrap .cancel-search {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    line-height: 45px;
+    font-size: 12px;
+    opacity: 0;
+    color: #fff;
+}
+
+.header-search .clear-btn.cur {
+    display: block;
+}
+
+ion-header-bar .btn-right {
+    color: #fff !important;
+    margin-right: 5px;
+}
+
+ion-header-bar .btn-left {
+    margin-left: 5px;
+}
+
+
+/* 设置按钮 */
+
+.ion-gear-b {
+    font-size: 26px;
+    color: #fff;
+}
+
+
+/* lessonList 列表 通用 */
+
+.list.course-list .cli-footer {
+    position: absolute;
+    left: 108px;
+    right: 16px;
+    bottom: 5px;
+}
+
+.course-list h2.ellipsis-two {
+    line-height: 24px;
+    height: 48px;
+}
+
+ion-item.item {
+    border: none;
+    margin: 0;
+    padding: 5px 0;
+}
+
+ion-item:after {
+    z-index: 10;
+}
+
+.course-list img,
+.lazy img {
+    background-color: #f2f2f2;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/* 去除ion-item 点击后背景变灰 */
+
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated,
+.item.active.item-complex > .item-content,
+.item.activated.item-complex > .item-content,
+.item-complex.active .item-content.item-complex > .item-content,
+.item-complex.activated .item-content.item-complex > .item-content,
+.item .item-content.active.item-complex > .item-content,
+.item .item-content.activated.item-complex > .item-content {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+
+/* 通用返回按钮 */
+
+ion-header-bar .go-back {
+    color: #fff !important;
+    padding-left: 22px !important;
+}
+
+ion-header-bar .go-back:before {
+    position: absolute;
+    content: ' ';
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    left: 8px;
+    font-size: 0;
+    line-height: 34px;
+    vertical-align: top;
+    width: 15px;
+    height: 20px;
+    background: url(../images/header-back-btn.png) no-repeat;
+    background-size: auto 100%;
+}
+
+.common-back-btn {
+    padding: 0 10px 0 8px;
+    z-index: 9999;
+}
+
+.back-icon {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 8px;
+    width: 25px;
+    height: 20px;
+    background: url(../images/back-icon.png) no-repeat 3px center;
+    background-size: auto 100%;
+}
+
+
+/* 覆盖一些默认样式 */
+
+[nav-view-transition="ios"][nav-view-direction="forward"],
+[nav-view-transition="ios"][nav-view-direction="back"] {
+    background-color: transparent;
+}
+
+.bar.bar-stable .title {
+    color: #fff;
+    padding: 0 50px;
+}
+
+
+/* 通用加载loading */
+
+.common-spinner-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgba(0, 0, 0, .4);
+    width: .8rem;
+    height: .8rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    z-index: 9;
+}
+
+.common-spinner-wrap ion-spinner {
+    stroke: #e6e6e6;
+}
+
+@-webkit-keyframes sk-waveStretchDelay {
+    0%,
+    40%,
+    100% {
+        -webkit-transform: scaleY(0.4);
+        transform: scaleY(0.4);
+    }
+    20% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}
+
+@keyframes sk-waveStretchDelay {
+    0%,
+    40%,
+    100% {
+        -webkit-transform: scaleY(0.4);
+        transform: scaleY(0.4);
+    }
+    20% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}
+
+
+/* ionic 转场中的bug 弥补 */
+
+ion-nav-bar.hide {
+    display: block !important;
+}
+
+
+/* 解决多个input 在手机上无法ng-submit 提交的问题 [不能使用display:none] */
+
+.multi-input-submit {
+    position: absolute;
+    top: -1000%;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+/* 弹性盒 */
+
+.mui-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+
+/* track 样式重置 */
+
+.toggle .track {
+    border-width: 1px;
+}
+
+.not-found img {
+    padding-top: 50px;
+    width: 70px;
+    background: transparent;
+}
+
+.not-found div {
+    line-height: 45px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+/* tab 栏bug弥补 */
+
+.tab-item {
+    max-width: none;
+}
+
+
+/* modal样式的覆盖 */
+
+.modal {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 240px;
+}
+
+.no-scroll-bar::-webkit-scrollbar,
+.no-scroll-bar .scroll::-webkit-scrollbar {
+    display: none;
+}
+
+ion-header-bar.bar .title {
+    padding: 0 40px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[nav-bar-transition="ios"] .title,
+[nav-bar-transition="ios"] .buttons,
+[nav-bar-transition="ios"] .back-text,
+[nav-bar-transition="android"] .title,
+[nav-bar-transition="android"] .buttons {
+    -webkit-transition-duration: 0ms;
+    transition-duration: 0ms;
+}
+
+.no-wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
