@@ -22,6 +22,7 @@
                     /* 通用返回函数 */
                     back: function() {
                         // 不同平台分别处理,此处使用了ionic-native-transitions插件
+                        $ionicViewSwitcher.nextDirection('back');
                         ionic.Platform.isIOS() ? $ionicHistory.goBack() : $ionicNativeTransitions.goBack();
                     },
 
