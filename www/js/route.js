@@ -4,5 +4,6 @@ angular.module('route', [
     'chats.route',
     'chatDetail.route',
     'account.route',
-    'simples.pdf.route'
+    'simples.pdf.route',
+    'simples.video.route'
 ]);
