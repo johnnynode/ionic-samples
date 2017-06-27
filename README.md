@@ -6,6 +6,7 @@
 - $`cd ionic-sample`
 - $`npm i`
 
+---
 ##　备注
 - 只为演示，未使用gulpfile.js文件
 
