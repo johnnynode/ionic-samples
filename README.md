@@ -8,17 +8,17 @@
 ### 图片
 #### 视频
 <div align=center>
-![视频播放](pic/video.gif)
+  <img src="pic/video.gif"/>
 </div>
 
 #### 音频
 <div align=center>
-![音频播放](pic/audio.gif)
+  <img src="pic/audio.gif"/>
 </div>
 
 #### pdf展示
 <div align=center>
-![pdf展示](pic/pdf.gif)
+  <img src="pic/pdf.gif"/>
 </div>
 
 ### 克隆
