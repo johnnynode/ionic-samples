@@ -1,4 +1,4 @@
-angular.module('simples.video.controller', [])
+angular.module('samples.video.controller', [])
     .controller('VideoCtrl', [
         '$scope',
         '$sce',

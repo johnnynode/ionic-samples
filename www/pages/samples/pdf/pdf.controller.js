@@ -1,4 +1,4 @@
-angular.module('simples.pdf.controller', [])
+angular.module('samples.pdf.controller', [])
     .controller('PdfCtrl', [
         '$scope',
         '$sce',

@@ -1,0 +1,20 @@
+<ion-view class="audio" cache-view="false">
+    <ion-header-bar class="bar-stable">
+        <button ng-click="back()">
+            <i class="ion-arrow-left-c"></i> Back
+        </button>
+        <h1 class="title">音频播放</h1>
+    </ion-header-bar>
+    <ion-content scroll="false" class="no-scroll-bar" overflow-scroll="true" data-tap-disable="true" scrollbar-y="false" has-bouncing="false">
+        <!-- 动画区域 -->
+        <div class="animate-zone center-center">
+            <div class="animate-zone-inner" ng-class="{cur:renderData.playAnimation}">
+                <span class="center-center">music</span>
+            </div>
+        </div>
+    </ion-content>
+    <div class="audio-bottom">
+        <!-- audio元素 -->
+        <mp3-container x-source="renderData.source"></mp3-container>
+    </div>
+</ion-view>

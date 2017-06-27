@@ -1,7 +1,8 @@
 (function(angular) {
     'use strict';
     angular.module('directives', [
-            'directives.video'
+            'directives.video',
+            'directives.mp3'
         ])
         /* 自动获取焦点 */
         .directive('autoFocus', function($timeout, $cordovaKeyboard) {

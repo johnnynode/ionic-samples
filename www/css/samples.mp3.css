@@ -1,0 +1,135 @@
+.audio ion-content {
+    bottom: 80px;
+    background-color: #fff;
+}
+
+.play-state {
+    display: inline-block;
+    vertical-align: top;
+    margin: 13px 10px 0 10px;
+    width: 18px;
+    height: 18px;
+    background: url(../images/icon-mp3.png) no-repeat center bottom;
+    background-size: 100% auto;
+}
+
+.animate-zone {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    max-width: 300px;
+    padding: 12px;
+    background-color: #808080;
+    border-radius: 50%;
+}
+
+.audio-bottom {
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    left: 0;
+    right: 0;
+}
+
+.audio-time {
+    padding: 30px 10px 0;
+}
+
+.audio-controll-bar .play-btn {
+    width: 36px;
+    height: 36px;
+}
+
+.audio-progress-zone {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+}
+
+.audio-progress-zone .audio-range-input {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    height: 15px;
+}
+
+.audio-controll-bar .playing-btn {
+    background: url('../images/icon-mp3.png') no-repeat center bottom !important;
+    background-size: 100% auto !important;
+}
+
+.audio-controll-bar .audio-range-input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: default;
+    top: 0;
+    height: 14px;
+    width: 14px;
+    background: #808080;
+    border-radius: 50%;
+    box-shadow: 0 0 3px #fff;
+    overflow: visible;
+    position: relative;
+}
+
+.audio-controll-bar .audio-range-input[type="range"]::-webkit-slider-thumb:before {
+    position: absolute;
+    content: ' ';
+    top: 5px;
+    left: -1998px;
+    background: #808080;
+}
+
+.audio-controll-bar .audio-range-track {
+    width: 100%;
+    height: 2px;
+    background-color: #d2d2d2;
+}
+
+.audio-controll-bar .play-btn.cur .playing-btn {
+    background-position: center 0 !important;
+}
+
+.animate-zone-inner {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color: #fdfdfd;
+    color: #808080;
+    animation: audioRotate 5s linear infinite;
+    -webkit-animation: audioRotate 5s linear infinite;
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+.animate-zone-inner.cur {
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
+}
+
+@keyframes audioRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes audioRotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}

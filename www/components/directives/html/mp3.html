@@ -1,0 +1,18 @@
+<div class="mp3-wrap">
+    <audio preload="metadata" autoplay="false" ng-src="{{source}}"></audio>
+    <!-- 音频控制区 -->
+    <div class="audio-controll-bar">
+        <!-- 播放,暂停 -->
+        <div class="play-btn center-center" ng-class="{cur:audioData.playing}" on-tap="play()">
+            <span class="playing-btn"></span>
+        </div>
+        <div class="audio-time clearfix">
+            <span class="now-time pull-left">{{audioData.current ? audioData.current : '00:00:00'}}</span>
+            <span class="total-time pull-right">{{audioData.duration ? audioData.duration : '00:00:00'}}</span>
+        </div>
+        <div class="audio-progress-zone range">
+            <div class="audio-range-track center-center"></div>
+            <input class="audio-range-input center-center" type="range" value="0" min="0" max="{{audioData.durationOrigin}}" ng-model="audioData.currentOrigin" ng-change="seeking()">
+        </div>
+    </div>
+</div>
