@@ -6,9 +6,12 @@
 - 音频源使用网上链接易失效，存放于本地audio文件夹下：www/audio/music.mp3
 
 ### 图片
-![视频播放](pic/audio.gif)
+#### 视频
+![视频播放](pic/video.gif)
+#### 音频
 ![音频播放](pic/audio.gif)
-![pdf展示](pic/audio.gif)
+#### pdf展示
+![pdf展示](pic/pdf.gif)
 
 ### 克隆
 $`git clone git@github.com:johnnynode/ionic-sample.git --depth 1`
