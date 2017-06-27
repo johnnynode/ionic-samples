@@ -21,11 +21,11 @@
 </div>
 
 ### 克隆
-$`git clone git@github.com:johnnynode/ionic-sample.git --depth 1` <br>
+`git clone git@github.com:johnnynode/ionic-sample.git --depth 1` 
 
 ###　运行
-$`cd ionic-sample` <br>
-$`npm i` <br>
+`cd ionic-sample`  <br>
+`npm i` 
 
 ###　备注
 - 只为演示，未使用gulpfile.js文件
