@@ -6,8 +6,8 @@
 - 音频源使用网上链接易失效，存放于本地audio文件夹下：www/audio/music.mp3
 
 ### 图片
-![视频播放](pic/audio.gif) <br>
-![音频播放](pic/audio.gif) <br>
+![视频播放](pic/audio.gif)
+![音频播放](pic/audio.gif)
 ![pdf展示](pic/audio.gif)
 
 ### 克隆
