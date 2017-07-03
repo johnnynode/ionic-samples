@@ -29,6 +29,3 @@ $ npm i
 
 ## PdfLoading
 [pdf展示效果示例](pdf.md)
-
-git config user.name "johnnynode"
-git config user.email "johnnynode@gmail.com"
