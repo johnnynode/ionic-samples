@@ -1,4 +1,4 @@
-angular.module('starter.services.chats', [])
+angular.module('starter.services.category', [])
 
 .factory('categoryData', function() {
     return [

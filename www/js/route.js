@@ -1,7 +1,7 @@
 angular.module('route', [
     'tab.route',
     'dash.route',
-    'chats.route',
+    'category.route',
     'chatDetail.route',
     'account.route',
     'samples.pdf.route',
