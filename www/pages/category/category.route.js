@@ -1,4 +1,4 @@
-angular.module('category.route', ['category.controller', 'starter.services.category'])
+angular.module('category.route', ['category.controller'])
     .config(function($stateProvider) {
         $stateProvider
             .state('tab.category', {

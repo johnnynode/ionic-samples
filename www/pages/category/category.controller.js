@@ -1,8 +1,49 @@
-angular.module('category.controller', [])
+angular.module('category.controller', ['categoryService'])
   .controller('CategoryCtrl', [
     '$scope',
+    'appUtils',
     'categoryData',
-    function ($scope, ionicScrollDelegate, categoryData) {
+    function ($scope, appUtils, ionicScrollDelegate, categoryData) {
+      /* 初始化数据模型 */
+      $scope.isLoading = false;
+      var fn = $scope.fn = {};
+      fn.go = appUtils.go;
+      var dataAll = $scope.dataAll = {};
+      dataAll.abc = [];
+      dataAll.cate = {};
+      dataAll.mapContainer = {}; // 初始化一个盛放各个标签节点个数的对象
+
+      /* 页面初始化 */
+      pageInit();
+      function pageInit() {
+        getAllCategory();
+      }
+
+      // 得到所有分类信息
+      function getAllCategory() {
+        console.log("dataAll.abc");
+        console.log(dataAll.abc);
+        console.log("....");
+        console.log(categoryData);
+
+        angular.forEach(categoryData, function (item) {
+          if (item.firstletter) {
+            dataAll.cate[item.firstletter] = dataAll.cate[item.firstletter] || []; // 初始化单元
+            dataAll.cate[item.firstletter].push(item);
+          }
+        });
+
+        // 下面将是数据的格式转换 将存在的ABC标签存放到 dataAll.abc 中
+        for (var k in dataAll.cate) {
+          dataAll.abc.push(k);
+          dataAll.mapContainer[k] = dataAll.cate[k].length; // 存储每个字母结点代表的分类的学科个数。
+        }
+        dataAll.abc.sort(); // 从A到Z排序
+
+        console.log("getAllCategory");
+        console.log(dataAll.abc);
+      }
+
       // 接收广播事件
       $scope.$on('touchMove', function (event, data) {
         getScrollData(data);
@@ -57,6 +98,5 @@ angular.module('category.controller', [])
         }
         $ionicScrollDelegate.$getByHandle('cateContScroll').scrollTo(0, initHeight, false); // 滚动特效
       }
-
 
     }]);
