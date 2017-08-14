@@ -2,10 +2,11 @@
 
 ## 克隆
 ```
-$ git clone git@github.com:johnnynode/ionic-sample.git --depth 1
+$ git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1
+
 ```
 
-## 运行
+## 安装
 ```
 $ cd ionic-sample
 $ npm i
