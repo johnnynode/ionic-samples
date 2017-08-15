@@ -1,16 +1,22 @@
 <ion-view view-title="category">
-    <ion-nav-bar class="bar-stable">
-        <ion-nav-back-button>
-        </ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-content overflow-scroll="false" scrollbar-y="false" has-bouncing="true" delegate-handle="cateContScroll">
-        <div repeat-finish ng-repeat="one in dataAll.abc" ng-if="dataAll.cate[one]" class="items-item-one">
-            <div class="items-title">{{one}}</div>
-            <div class="list">
-                <a class="item bd-b item-icon-left item-icon-right items-item" ng-repeat="item in dataAll.cate[one]" ng-click="fn.go('lessonList',{code:item.code,name:item.name})">
-                    {{item.name}}
-                </a>
-            </div>
-        </div>
-    </ion-content>
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content overflow-scroll="false" scrollbar-y="false" has-bouncing="true" delegate-handle="cateContScroll">
+    <div repeat-finish ng-repeat="one in dataAll.abc" ng-if="dataAll.cate[one]" class="items-item-one">
+      <div class="items-title">{{one}}</div>
+      <div class="list">
+        <a class="item bd-b item-icon-left item-icon-right items-item" ng-repeat="item in dataAll.cate[one]"
+           ng-click="fn.go('lessonList',{code:item.code,name:item.name})">
+          {{item.name}}
+        </a>
+      </div>
+    </div>
+  </ion-content>
+  <category-touch-bar class="fixed-abc c-666">
+    <ul>
+      <li ng-repeat="item in dataAll.abc">{{item}}</li>
+    </ul>
+  </category-touch-bar>
 </ion-view>

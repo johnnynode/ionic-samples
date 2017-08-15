@@ -1,9 +1,10 @@
 angular.module('category.controller', ['categoryService'])
   .controller('CategoryCtrl', [
     '$scope',
+    '$ionicScrollDelegate',
     'appUtils',
     'categoryData',
-    function ($scope, appUtils, ionicScrollDelegate, categoryData) {
+    function ($scope, $ionicScrollDelegate, appUtils, categoryData) {
       /* 初始化数据模型 */
       $scope.isLoading = false;
       var fn = $scope.fn = {};
@@ -22,9 +23,9 @@ angular.module('category.controller', ['categoryService'])
       // 得到所有分类信息
       function getAllCategory() {
         console.log("dataAll.abc");
-        console.log(dataAll.abc);
-        console.log("....");
-        console.log(categoryData);
+        // console.log(dataAll.abc);
+        // console.log("....");
+
 
         angular.forEach(categoryData, function (item) {
           if (item.firstletter) {
@@ -39,9 +40,6 @@ angular.module('category.controller', ['categoryService'])
           dataAll.mapContainer[k] = dataAll.cate[k].length; // 存储每个字母结点代表的分类的学科个数。
         }
         dataAll.abc.sort(); // 从A到Z排序
-
-        console.log("getAllCategory");
-        console.log(dataAll.abc);
       }
 
       // 接收广播事件
