@@ -7,8 +7,7 @@
     <div repeat-finish ng-repeat="one in dataAll.abc" ng-if="dataAll.cate[one]" class="items-item-one">
       <div class="items-title">{{one}}</div>
       <div class="list">
-        <a class="item bd-b item-icon-left item-icon-right items-item" ng-repeat="item in dataAll.cate[one]"
-           ng-click="fn.go('lessonList',{code:item.code,name:item.name})">
+        <a class="item bd-b item-icon-left item-icon-right items-item" ng-repeat="item in dataAll.cate[one]">
           {{item.name}}
         </a>
       </div>

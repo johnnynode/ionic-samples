@@ -1,10 +1,11 @@
 angular.module('category.controller', ['categoryService'])
   .controller('CategoryCtrl', [
     '$scope',
+    '$timeout',
     '$ionicScrollDelegate',
     'appUtils',
     'categoryData',
-    function ($scope, $ionicScrollDelegate, appUtils, categoryData) {
+    function ($scope, $timeout, $ionicScrollDelegate, appUtils, categoryData) {
       /* 初始化数据模型 */
       $scope.isLoading = false;
       var fn = $scope.fn = {};
@@ -97,4 +98,71 @@ angular.module('category.controller', ['categoryService'])
         $ionicScrollDelegate.$getByHandle('cateContScroll').scrollTo(0, initHeight, false); // 滚动特效
       }
 
-    }]);
+    }])
+  .directive('categoryTouchBar', function () {
+    return {
+      restrict: 'EA',
+      replace: true,
+      link: function (scope, element) {
+        var ele = element[0]; // 获取元素
+        var eleTop = 0; // touchBar元素距离浏览器顶部位置初始化
+        var eleClientRectTop = ele.getBoundingClientRect().top; // touchBar中心位置距离顶部的距离
+
+        var touchEnd = 0; // 移动结束的位置
+        var distance = 0; // 移动的距离
+
+        // 初始化其他用到的数据
+        var boxHeight = 352;
+        var boxUnit = 16;
+
+        // 滑动开始
+        ionic.EventController.on('touchstart', function (e) {
+          e.preventDefault();
+          eleTop = eleClientRectTop - boxHeight / 2; // 计算元素顶部距离浏览器顶部的位置
+        }, ele);
+
+        // 滑动中
+        ionic.EventController.on('touchmove', function (e) {
+          e.preventDefault();
+          touchEnd = e.touches[0].clientY;
+          distance = touchEnd - eleTop;
+          distance = distance > boxHeight ? boxHeight : (distance < 0 ? 0 : distance); // 超出过滤功能
+
+          // boxHeight是touchBar的高度, boxUnit是每个字符的高度, distance 是最后在touchBar上的位置距离touchBar顶部的位置。
+          var moveObj = {
+            boxHeight: boxHeight,
+            boxUnit: boxUnit,
+            distance: distance
+          };
+          scope.$emit('touchMove', moveObj); // 发送广播
+        }, ele);
+
+        // 滑动结束隐藏
+        ionic.EventController.on('touchend', function () {
+          scope.$emit('touchEnd', 1); // 发送广播
+        }, ele);
+
+        // 对单纯点击的支持
+        ionic.EventController.on('click', function (e) {
+          var moveObj = {
+            boxHeight: boxHeight,
+            boxUnit: boxUnit,
+            distance: (e.pageY || e.y) - eleTop
+          };
+          scope.$emit('touchBarClick', moveObj); // 发送广播
+        }, ele);
+      }
+    };
+  })
+  .directive('repeatFinish', function ($timeout) {
+    return {
+      restrict: 'A',
+      link: function (scope, element) {
+        if (scope.$last === true) {
+          $timeout(function () {
+            scope.$emit('repeatFinish', element.parent()[0].offsetHeight); // 发送广播
+          });
+        }
+      }
+    }
+  });

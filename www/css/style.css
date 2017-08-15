@@ -338,26 +338,6 @@ ion-nav-bar ion-header-bar {
     padding-right: 0;
 }
 
-ion-nav-bar .push-icon {
-    display: block;
-    margin: 7px 7px 0 0;
-    width: 24px;
-    height: 22px;
-    background: url("../images/push-icon.png") no-repeat;
-    background-size: 100% auto;
-}
-
-.header-search .search-icon,
-ion-header-bar .search-icon-right {
-    display: inline-block;
-    vertical-align: top;
-    margin: 7px 0 0 7px;
-    width: 17px;
-    height: 17px;
-    background: url(../images/search-icon.png) no-repeat center center;
-    background-size: 100% auto;
-}
-
 .header-search {
     height: 100%;
     position: relative;
@@ -406,17 +386,6 @@ ion-header-bar .search-icon-right {
 
 .header-search .search-input::-webkit-input-placeholder {
     color: #fff;
-}
-
-.header-search .clear-btn {
-    width: 16px;
-    height: 16px;
-    background: url(../images/icon-clear-close.png) no-repeat 0 0;
-    background-size: 100% auto;
-    display: none;
-    position: absolute;
-    top: 7px;
-    right: 10px;
 }
 
 .header-search-wrap {
@@ -515,37 +484,10 @@ ion-header-bar .go-back {
     padding-left: 22px !important;
 }
 
-ion-header-bar .go-back:before {
-    position: absolute;
-    content: ' ';
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    left: 8px;
-    font-size: 0;
-    line-height: 34px;
-    vertical-align: top;
-    width: 15px;
-    height: 20px;
-    background: url(../images/header-back-btn.png) no-repeat;
-    background-size: auto 100%;
-}
-
 .common-back-btn {
     padding: 0 10px 0 8px;
     z-index: 9999;
 }
-
-.back-icon {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 8px;
-    width: 25px;
-    height: 20px;
-    background: url(../images/back-icon.png) no-repeat 3px center;
-    background-size: auto 100%;
-}
-
 
 /* 覆盖一些默认样式 */
 
@@ -657,17 +599,6 @@ ion-header-bar.bar .title {
 
 .tabs {
     border: none;
-}
-
-.item-avatar,
-.item-avatar .item-content,
-.item-avatar-left,
-.item-avatar-left .item-content {
-    min-height: auto;
-}
-
-.item-complex.item-icon-right .item-content {
-    min-height: auto;
 }
 
 .outer-pages .load-progress {
