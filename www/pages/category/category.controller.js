@@ -23,11 +23,6 @@ angular.module('category.controller', ['categoryService'])
 
       // 得到所有分类信息
       function getAllCategory() {
-        console.log("dataAll.abc");
-        // console.log(dataAll.abc);
-        // console.log("....");
-
-
         angular.forEach(categoryData, function (item) {
           if (item.firstletter) {
             dataAll.cate[item.firstletter] = dataAll.cate[item.firstletter] || []; // 初始化单元
@@ -40,6 +35,7 @@ angular.module('category.controller', ['categoryService'])
           dataAll.abc.push(k);
           dataAll.mapContainer[k] = dataAll.cate[k].length; // 存储每个字母结点代表的分类的学科个数。
         }
+
         dataAll.abc.sort(); // 从A到Z排序
       }
 
