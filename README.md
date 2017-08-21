@@ -23,10 +23,13 @@ $ npm i
 - 音频源使用网上链接易失效，存放于本地audio文件夹下：www/audio/music.mp3
 
 ## VideoPlay
-[视频播放效果示例](video.md)
+[视频播放效果示例](./mds/video.md)
 
 ## AudioPlay
-[音频播放效果示例](audio.md)
+[音频播放效果示例](./mds/audio.md)
 
 ## PdfLoading
-[pdf展示效果示例](pdf.md)
+[pdf展示效果示例](./mds/pdf.md)
+
+## categoryScrolling
+[分类字母滑动效果示例](./mds/cate.md)
