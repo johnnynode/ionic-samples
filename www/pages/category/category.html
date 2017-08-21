@@ -1,0 +1,23 @@
+<ion-view view-title="category" class="category">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="items-content" overflow-scroll="false" scrollbar-y="false" has-bouncing="true" delegate-handle="cateContScroll">
+    <div repeat-finish ng-repeat="one in dataAll.abc" ng-if="dataAll.cate[one]" class="items-item-one">
+      <div class="items-title">{{one}}</div>
+      <div class="list">
+        <a class="item bd-b item-icon-left item-icon-right items-item" ng-repeat="item in dataAll.cate[one]">
+          {{item.name}}
+        </a>
+      </div>
+    </div>
+  </ion-content>
+  <category-touch-bar class="fixed-abc c-666">
+    <ul>
+      <li ng-repeat="item in dataAll.abc">{{item}}</li>
+    </ul>
+  </category-touch-bar>
+  <!-- 展示字母 -->
+  <div class="letterShow center-center" ng-class="{cur:dataAll.letter}">{{dataAll.letter}}</div>
+</ion-view>

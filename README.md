@@ -2,10 +2,11 @@
 
 ## 克隆
 ```
-$ git clone git@github.com:johnnynode/ionic-sample.git --depth 1
+$ git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1
+
 ```
 
-## 运行
+## 安装
 ```
 $ cd ionic-sample
 $ npm i
@@ -21,20 +22,11 @@ $ npm i
 - 视频源地址是videogular官网上的一个视频demo地址：http://static.videogular.com/assets/videos/videogular.mp4
 - 音频源使用网上链接易失效，存放于本地audio文件夹下：www/audio/music.mp3
 
-## 视频播放效果
+## VideoPlay
+[视频播放效果示例](video.md)
 
-<div align=center>
-  <img src="pic/video.gif"/>
-</div>
+## AudioPlay
+[音频播放效果示例](audio.md)
 
-## 音频播放效果
-
-<div align=center>
-  <img src="pic/audio.gif"/>
-</div>
-
-## pdf展示效果
-
-<div align=center>
-  <img src="pic/pdf.gif"/>
-</div>
+## PdfLoading
+[pdf展示效果示例](pdf.md)
