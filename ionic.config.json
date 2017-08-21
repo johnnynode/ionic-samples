@@ -1,4 +1,9 @@
 {
-    "name": "ionic-sample",
-    "app_id": ""
+  "name": "ionic-sample",
+  "app_id": "",
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ],
+  "integrations": {}
 }
