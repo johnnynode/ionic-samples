@@ -35,7 +35,7 @@ $ `ionic serve`
 ## PdfLoading
 [pdf展示效果示例](./mds/pdf.md)
 
-## categoryScrolling
+## CategoryScrolling
 [分类字母滑动效果示例](./mds/cate.md)
 
 ## License
