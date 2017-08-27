@@ -1,20 +1,14 @@
 # ionic v1 的 tab app 模板演示
 
 ## 克隆
-```
-$ git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1
-
-```
+- $ git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1
 
 ## 安装
-```
-$ cd ionic-sample
-$ npm i
-
-```
+- $ cd ionic-sample
+- $ npm i
 
 ## 运行
-$ `ionic serve`
+- $ `ionic serve`
 
 ## 备注
 - 只为演示，未使用gulpfile.js文件, 
@@ -26,17 +20,21 @@ $ `ionic serve`
 - 视频源地址是videogular官网上的一个视频demo地址：http://static.videogular.com/assets/videos/videogular.mp4
 - 音频源使用网上链接易失效，存放于本地audio文件夹下：www/audio/music.mp3
 
-## VideoPlay
-[视频播放效果示例](./mds/video.md)
+## PdfLoading
+- [pdf展示效果示例](./mds/pdf.md)
+- [Blog](http://blog.csdn.net/tyro_java/article/details/73058952) 
 
 ## AudioPlay
 [音频播放效果示例](./mds/audio.md)
+- [Blog](http://blog.csdn.net/tyro_java/article/details/73043991) 
 
-## PdfLoading
-[pdf展示效果示例](./mds/pdf.md)
+## VideoPlay
+- [视频播放效果示例](./mds/video.md)
+- [Blog](http://blog.csdn.net/tyro_java/article/details/73040008) 
 
 ## CategoryScrolling
-[分类字母滑动效果示例](./mds/cate.md)
+- [分类字母滑动效果示例](./mds/cate.md)
+- [Blog](http://blog.csdn.net/tyro_java/article/details/77622455) 
 
 ## License
 MIT
