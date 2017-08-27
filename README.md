@@ -1,11 +1,11 @@
 # ionic v1 的 tab app 模板演示
 
 ## 克隆
-- $ git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1
+- $ `git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1`
 
 ## 安装
-- $ cd ionic-sample
-- $ npm i
+- $ `cd ionic-sample`
+- $ `npm i`
 
 ## 运行
 - $ `ionic serve`
@@ -22,19 +22,19 @@
 
 ## PdfLoading
 - [pdf展示效果示例](./mds/pdf.md)
-- [Blog](http://blog.csdn.net/tyro_java/article/details/73058952) 
+- [Related Blog](http://blog.csdn.net/tyro_java/article/details/73058952) 
 
 ## AudioPlay
-[音频播放效果示例](./mds/audio.md)
-- [Blog](http://blog.csdn.net/tyro_java/article/details/73043991) 
+- [音频播放效果示例](./mds/audio.md)
+- [Related Blog](http://blog.csdn.net/tyro_java/article/details/73043991) 
 
 ## VideoPlay
 - [视频播放效果示例](./mds/video.md)
-- [Blog](http://blog.csdn.net/tyro_java/article/details/73040008) 
+- [Related Blog](http://blog.csdn.net/tyro_java/article/details/73040008) 
 
 ## CategoryScrolling
 - [分类字母滑动效果示例](./mds/cate.md)
-- [Blog](http://blog.csdn.net/tyro_java/article/details/77622455) 
+- [Related Blog](http://blog.csdn.net/tyro_java/article/details/77622455) 
 
 ## License
 MIT
