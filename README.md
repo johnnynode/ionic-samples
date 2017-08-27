@@ -11,7 +11,7 @@
 - $ `ionic serve`
 
 ## 备注
-- 只为演示，未使用gulpfile.js文件, 
+- 只为演示，未使用gulpfile.js文件
 - 未进行构建和跨域处理
 
 ## 关于samples
