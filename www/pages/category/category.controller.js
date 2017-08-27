@@ -35,7 +35,7 @@ angular.module('category.controller', ['categoryService'])
           dataAll.abc.push(k);
           dataAll.mapContainer[k] = dataAll.cate[k].length; // 存储每个字母结点代表的分类的学科个数。
         }
-
+        $scope.boxHeight = dataAll.abc.length; // 获取字母个数
         dataAll.abc.sort(); // 从A到Z排序
       }
 
@@ -99,6 +99,9 @@ angular.module('category.controller', ['categoryService'])
     return {
       restrict: 'EA',
       replace: true,
+      scope: {
+        'boxHeight':'='
+      },
       link: function (scope, element) {
         var ele = element[0]; // 获取元素
         var eleTop = 0; // touchBar元素距离浏览器顶部位置初始化
@@ -108,8 +111,8 @@ angular.module('category.controller', ['categoryService'])
         var distance = 0; // 移动的距离
 
         // 初始化其他用到的数据
-        var boxHeight = 352;
-        var boxUnit = 16;
+        var boxUnit = 16; // 此处是固定的单元字母高度
+        var boxHeight = scope.boxHeight * boxUnit;  // 此处需要根据字母数据调节，应对可能会发生变化的情况
 
         // 滑动开始
         ionic.EventController.on('touchstart', function (e) {
