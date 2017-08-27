@@ -37,3 +37,7 @@ $ `ionic serve`
 
 ## categoryScrolling
 [分类字母滑动效果示例](./mds/cate.md)
+
+## License
+---
+MIT
