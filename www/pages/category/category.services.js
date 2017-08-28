@@ -1,5 +1,5 @@
 (function (angular) {
-  // 配置模块，控制不同平台的兼容性
+  // 提供数据支持
   angular.module('categoryService', [])
     .factory('categoryData', [
       function () {
