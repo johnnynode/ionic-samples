@@ -1,11 +1,39 @@
 <ion-view class="carousel" cache-view="false">
-    <ion-header-bar class="bar-stable">
-        <button ng-click="back()">
-            <i class="ion-arrow-left-c"></i> Back
-        </button>
-        <h1 class="title">旋转木马</h1>
-    </ion-header-bar>
-    <ion-content scroll="false" class="no-scroll-bar" overflow-scroll="true" data-tap-disable="true" scrollbar-y="false" has-bouncing="false">
-
-    </ion-content>
+  <ion-header-bar class="bar-stable">
+    <button ng-click="back()">
+      <i class="ion-arrow-left-c"></i> Back
+    </button>
+    <h1 class="title">旋转木马</h1>
+  </ion-header-bar>
+  <ion-content scroll="false" class="no-scroll-bar" overflow-scroll="true" data-tap-disable="true" scrollbar-y="false"
+               has-bouncing="false">
+    <!-- 轮播部分 -->
+    <div class="magazine-slider" ng-class="{'cur':overRate}">
+      <div home-slider data-vol-list="volList"></div>
+    </div>
+    <!-- loading部分 -->
+    <ion-spinner class="juzhong-son loading-bubbles" icon="bubbles" ng-if="isLoading"></ion-spinner>
+  </ion-content>
+  <!-- 杂志层 -->
+  <div class="home-cate-wrap">
+    <div class="home-cate" ng-class="{cur:spread}" on-tap="spread = !spread">
+      <span class="home-cate-title">杂志·{{curMag}}</span>
+      <!-- 两个三角 -->
+      <span class="home-arr-wrap" ng-class="{cur:spread}">
+                <span class="ion-ios-arrow-down"></span>
+                <span class="ion-ios-arrow-up"></span>
+            </span>
+    </div>
+    <!-- 下拉菜单 -->
+    <div class="home-cate-cont" ng-class="{cur:spread,'bd-t':spread}">
+      <ion-scroll has-bouncing="true" scrollbar-y="true" direction="y" style="width: 100%; height: 100%"
+                  overflow-scroll="false" class="scroll-content">
+        <ul>
+          <li ng-repeat="item in magList track by $index" on-tap="fn.switchVols($index,item)">
+            {{fn.handleZi(item.magName)}}
+          </li>
+        </ul>
+      </ion-scroll>
+    </div>
+  </div>
 </ion-view>

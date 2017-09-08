@@ -4,6 +4,5 @@ angular.module('samples.carousel.controller', [])
         'appUtils',
         function($scope, appUtils) {
             $scope.back = appUtils.back;
-
         }
     ]);
