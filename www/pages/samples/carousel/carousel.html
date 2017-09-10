@@ -1,15 +1,15 @@
-<ion-view class="carousel" cache-view="false">
+<ion-view class="carousel home" cache-view="false">
   <ion-header-bar class="bar-stable">
     <button ng-click="back()">
       <i class="ion-arrow-left-c"></i> Back
     </button>
-    <h1 class="title">旋转木马</h1>
+    <h1 class="title">缩放轮播</h1>
   </ion-header-bar>
   <ion-content scroll="false" class="no-scroll-bar" overflow-scroll="true" data-tap-disable="true" scrollbar-y="false"
                has-bouncing="false">
     <!-- 轮播部分 -->
     <div class="magazine-slider" ng-class="{'cur':overRate}">
-      <div home-slider data-vol-list="volList"></div>
+      <div carousel-slider data-vol-list="volList"></div>
     </div>
     <!-- loading部分 -->
     <ion-spinner class="juzhong-son loading-bubbles" icon="bubbles" ng-if="isLoading"></ion-spinner>
