@@ -6,22 +6,20 @@ angular.module('samples.carousel.controller', ['samples.carousel.directive', 'ca
     'CarouselData',
     function ($scope, $timeout, appUtils, CarouselData) {
       /* 初始化数据模型 */
-      $scope.back = appUtils.back;
+      $scope.back = function () {
+        appUtils.back();
+        console.log("back");
+      }
 
       $scope.magList = []; // 杂志列表
       $scope.volList = []; // 期列表数据
       $scope.curMag = '最新'; // 默认杂志 : 最新
       $scope.isLoading = true; // loading 默认 true
       var fn = $scope.fn = {};
-      
+
       /* 进入视图,收起 */
       $scope.$on('$ionicView.beforeEnter', function () {
         $scope.spread = false; // 默认不展开
-      });
-
-      $scope.$on('$ionicView.afterEnter', function () {
-        appUtils.enterSettings(); // 隐藏闪屏
-        appUtils.clearHistory();
       });
 
       pageInit();
@@ -31,7 +29,6 @@ angular.module('samples.carousel.controller', ['samples.carousel.directive', 'ca
         loadingHide();
         getMagList(); // 获取杂志列表
         getLatest(); // 获取最新杂志
-
       }
 
       /* 图片质量较大 添加延迟隐藏方法 */
