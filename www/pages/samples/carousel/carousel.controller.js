@@ -6,10 +6,7 @@ angular.module('samples.carousel.controller', ['samples.carousel.directive', 'ca
     'CarouselData',
     function ($scope, $timeout, appUtils, CarouselData) {
       /* 初始化数据模型 */
-      $scope.back = function () {
-        appUtils.back();
-        console.log("back");
-      }
+      $scope.back = appUtils.back;
 
       $scope.magList = []; // 杂志列表
       $scope.volList = []; // 期列表数据
