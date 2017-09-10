@@ -30,7 +30,7 @@
                   overflow-scroll="false" class="scroll-content">
         <ul>
           <li ng-repeat="item in magList track by $index" on-tap="fn.switchVols($index,item)">
-            {{fn.handleZi(item.magName)}}
+            {{fn.handleName(item.magName)}}
           </li>
         </ul>
       </ion-scroll>
