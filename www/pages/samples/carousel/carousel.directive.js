@@ -11,7 +11,6 @@
         },
         template: '<div class="slider-wrap"></div>',
         link: function (scope) {
-
           // 用于挂载在外部的变量, 用于处理屏幕变化的变量
           scope.outWatcher = {};
 

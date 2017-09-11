@@ -23,7 +23,7 @@ angular.module('samples.carousel.controller', ['samples.carousel.directive', 'ca
 
       /* 页面初始化 */
       function pageInit() {
-        loadingHide();
+        loadingHide(); // loading 效果
         getMagList(); // 获取杂志列表
         getLatest(); // 获取最新杂志
       }

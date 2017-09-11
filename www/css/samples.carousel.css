@@ -229,14 +229,6 @@
   background: #F5F5F5;
 }
 
-/* iphone 4 及其以下 */
-@media (max-width: 320px){
-    .carousel .slider-wrap-inner img{
-        height: 3.2rem;
-        margin-top: 25px;
-    }
-}
-
 /* 超级大屏幕 */
 @media (min-width: 385px) {
     .carousel .slider-wrap-inner img {
