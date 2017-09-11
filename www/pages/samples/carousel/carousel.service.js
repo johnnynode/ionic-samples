@@ -8,24 +8,15 @@
           magList: [
             {
               "magName": "经济学",
-              "isShow": 1,
-              "magCode": "ECON",
-              "sn": 0,
-              "id": 9
+              "magCode": "ECON"
             },
             {
               "magName": "生物技术",
-              "isShow": 1,
-              "magCode": "BIOL",
-              "sn": 1,
-              "id": 19
+              "magCode": "BIOL"
             },
             {
               "magName": "计算机科技",
-              "isShow": 1,
-              "magCode": "COMP",
-              "sn": 2,
-              "id": 18
+              "magCode": "COMP"
             }
           ],
           // 最新杂志
