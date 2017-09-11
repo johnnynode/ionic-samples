@@ -228,3 +228,30 @@
 .carousel ion-content, .carousel ion-content .scroll {
   background: #F5F5F5;
 }
+
+/* iphone 4 及其以下 */
+@media (max-width: 320px){
+    .carousel .slider-wrap-inner img{
+        height: 3.2rem;
+        margin-top: 25px;
+    }
+}
+
+/* 超级大屏幕 */
+@media (min-width: 385px) {
+    .carousel .slider-wrap-inner img {
+        height: 3.8rem;
+    }
+}
+
+@media (min-width: 465px) {
+    .carousel .slider-wrap-inner img {
+        height: 4.2rem;
+    }
+}
+
+@media (min-width: 565px) {
+    .carousel .slider-wrap-inner img {
+        height: 5rem;
+    }
+}
