@@ -12,11 +12,11 @@
       <div carousel-slider data-vol-list="volList"></div>
     </div>
     <!-- loading部分 -->
-    <ion-spinner class="juzhong-son loading-bubbles" icon="bubbles" ng-if="isLoading"></ion-spinner>
+    <ion-spinner class="center-center loading-bubbles" icon="bubbles" ng-if="isLoading"></ion-spinner>
   </ion-content>
   <!-- 杂志层 -->
   <div class="home-cate-wrap">
-    <div class="home-cate" ng-class="{cur:spread}" on-tap="spread = !spread">
+    <div class="home-cate" ng-class="{cur:spread}" on-tap="spread=!spread">
       <span class="home-cate-title">杂志·{{curMag}}</span>
       <!-- 两个三角 -->
       <span class="home-arr-wrap" ng-class="{cur:spread}">
@@ -36,4 +36,17 @@
       </ion-scroll>
     </div>
   </div>
+  <style type="text/css">
+    .gray-layer {
+      position: fixed;
+      top:0;
+      bottom: 0;
+      left:0;
+      right:0;
+      background: rgba(0,0,0,.2);
+      z-index: 0
+    }
+  </style>
+  <!-- 灰层 -->
+  <div class="gray-layer" ng-if="spread" ng-click="fn.hideGray()"></div>
 </ion-view>

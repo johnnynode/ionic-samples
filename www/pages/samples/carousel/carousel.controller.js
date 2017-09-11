@@ -73,6 +73,11 @@ angular.module('samples.carousel.controller', ['samples.carousel.directive', 'ca
         return str.replace(/电子杂志/g, '');
       };
 
+      /* 隐藏灰层 */
+      fn.hideGray = function() {
+        $scope.spread = false;
+      }
+
       /* 杂志的点击 */
       fn.switchVols = function (index, item) {
         $scope.spread = false; // 默认收起

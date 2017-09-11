@@ -104,6 +104,7 @@ ion-nav-view ion-view, ion-content, ion-content .scroll {
   position: fixed;
   top: 44px;
   font-size: 0;
+  z-index: 1;
 }
 
 .home-cate {
