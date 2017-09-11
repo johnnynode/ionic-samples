@@ -580,6 +580,7 @@ ion-header-bar.bar .title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 400;
 }
 
 [nav-bar-transition="ios"] .title,
