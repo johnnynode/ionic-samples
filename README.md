@@ -37,7 +37,7 @@
 - [Related Blog](http://blog.csdn.net/tyro_java/article/details/77622455) 
 
 ## CarouselScaleBanners
-- [缩放滑动效果的焦点图示例](./mds/cate.md)
+- [缩放滑动效果的焦点图示例](./mds/scaleBanners.md)
 - [Related Blog]()
 
 ## License
