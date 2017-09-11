@@ -68,11 +68,6 @@ angular.module('samples.carousel.controller', ['samples.carousel.directive', 'ca
         }
       }
 
-      /* 去除 电子杂志 字样 */
-      fn.handleName = function (str) {
-        return str.replace(/电子杂志/g, '');
-      };
-
       /* 隐藏灰层 */
       fn.hideGray = function() {
         $scope.spread = false;
