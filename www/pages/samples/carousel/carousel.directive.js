@@ -21,11 +21,9 @@
             sliderInner.className = 'slider-wrap-inner';
             slideBox.appendChild(sliderInner);
 
-            // 去详情页方法
-            scope.goPreview = function (vol, magCode, title) {
-              $timeout(function(){
-                appUtils.go('preview', {vol: vol, magCode: magCode, title: title});
-              });
+            // 杂志点击的回调 可用于其他逻辑处理
+            scope.magClick = function (title) {
+              console.log(title);
             };
 
             // 缩放的动画
@@ -50,7 +48,7 @@
                 }
                 imgWrap.appendChild(img);
                 li.appendChild(imgWrap);
-                li.setAttribute('on-tap', 'goPreview("' + list[i].vol + '","' + list[i].magCode + '","' + list[i].title + '")'); // 绑定事件
+                li.setAttribute('on-tap', 'magClick("' + list[i].title + '")'); // 绑定事件
                 $(sliderInner).append($(li));
               }
               var htmlObj = $compile($(sliderInner).html())(scope); // 对html 进行重新编译
