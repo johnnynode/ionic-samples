@@ -7,7 +7,6 @@ angular.module('samples.carousel.controller', ['samples.carousel.directive', 'ca
     function ($scope, $timeout, appUtils, CarouselData) {
       /* 初始化数据模型 */
       $scope.back = appUtils.back;
-
       $scope.magList = []; // 杂志列表
       $scope.volList = []; // 期列表数据
       $scope.curMag = '最新'; // 默认杂志 : 最新

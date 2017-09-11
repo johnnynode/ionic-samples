@@ -230,12 +230,6 @@
 }
 
 /* 超级大屏幕 */
-@media (min-width: 385px) {
-    .carousel .slider-wrap-inner img {
-        height: 3.8rem;
-    }
-}
-
 @media (min-width: 465px) {
     .carousel .slider-wrap-inner img {
         height: 4.2rem;
