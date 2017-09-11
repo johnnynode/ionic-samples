@@ -11,13 +11,17 @@
         },
         template: '<div class="slider-wrap"></div>',
         link: function (scope) {
+
+          // 用于挂载在外部的变量, 用于处理屏幕变化的变量
+          scope.outWatcher = {};
+
           // 所有设置函数
           function setUp() {
             // 针对宽高比的判断
             // 进行轮播图的 dom 生成操作
             var $ = angular.element; // jqLite 对象
-            var slideBox = document.querySelector('.slider-wrap'); // 获取轮播盒子对象
-            var sliderInner = document.createElement('ul');
+            var slideBox = scope.outWatcher.slideBox = document.querySelector('.slider-wrap'); // 获取轮播盒子对象
+            var sliderInner = scope.outWatcher.sliderInner = document.createElement('ul');
             sliderInner.className = 'slider-wrap-inner';
             slideBox.appendChild(sliderInner);
 
@@ -55,7 +59,7 @@
               $(sliderInner).html(''); // 清空
               $(sliderInner).append(htmlObj); // 追加
               var lis = sliderInner.querySelectorAll('li'); // 得到当前的所有li对象
-              var imgs = []; // 用于存放图像包裹节点
+              var imgs = scope.outWatcher.imgs = []; // 用于存放图像包裹节点
               // 图像包裹节点数组, 初始化样式
               for (var k = 0; k < lis.length; k++) {
                 if (!k) {
@@ -82,6 +86,12 @@
                 });
               }
             });
+          }
+
+          // 监听屏幕变化事件, 随时构造对象
+          window.onresize = function() {
+            var m = new MobileMove(); // 重新new
+            m.setSwipe(scope.outWatcher.slideBox, scope.outWatcher.sliderInner, scope.outWatcher.imgs, scope.volList);
           }
 
           // 页面加载完成后执行
