@@ -52,8 +52,10 @@ angular.module('category.controller', ['categoryService'])
         if (!data) {
           return;
         }
-        $timeout(function () {
+        // 0.3s之后隐藏
+        var t = $timeout(function () {
           dataAll.letter = '';
+          $timeout.cancel(t);
         }, 300);
       });
       // 接收click广播
