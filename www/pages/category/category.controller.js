@@ -1,11 +1,12 @@
 angular.module('category.controller', ['categoryService'])
   .controller('CategoryCtrl', [
     '$scope',
+    '$rootScope',
     '$timeout',
     '$ionicScrollDelegate',
     'appUtils',
     'categoryData',
-    function ($scope, $timeout, $ionicScrollDelegate, appUtils, categoryData) {
+    function ($scope, $rootScope, $timeout, $ionicScrollDelegate, appUtils, categoryData) {
       /* 初始化数据模型 */
       $scope.isLoading = false;
       var fn = $scope.fn = {};
@@ -15,14 +16,16 @@ angular.module('category.controller', ['categoryService'])
       dataAll.cate = {};
       dataAll.mapContainer = {}; // 初始化一个盛放各个标签节点个数的对象
 
-      /* 页面初始化 */
-      pageInit();
-      function pageInit() {
-        getAllCategory();
-      }
+      // 视图事件
+      $scope.$on('$ionicView.beforeEnter', function () {
+        getAllCategory(); // 获取数据，本地或者从网络获取
+      });
 
       // 得到所有分类信息
       function getAllCategory() {
+        // 此处处理假数据
+        // 如果是真实数据，那么先判断本地是否存在，如果不存在，那么网络获取，如果存在，直接使用。
+        // 此处是demo，所以在这里直接处理。
         angular.forEach(categoryData, function (item) {
           if (item.firstletter) {
             dataAll.cate[item.firstletter] = dataAll.cate[item.firstletter] || []; // 初始化单元
@@ -35,7 +38,9 @@ angular.module('category.controller', ['categoryService'])
           dataAll.abc.push(k);
           dataAll.mapContainer[k] = dataAll.cate[k].length; // 存储每个字母结点代表的分类的学科个数。
         }
-        $scope.boxHeight = dataAll.abc.length; // 获取字母个数
+
+        // 使用广播方式, 想到以后这些数据有可能动态加载，存在异步性
+        $rootScope.$broadcast("boxCount", dataAll.abc.length);
         dataAll.abc.sort(); // 从A到Z排序
       }
 
@@ -60,11 +65,6 @@ angular.module('category.controller', ['categoryService'])
       // 通用获取滚动事件
       function getScrollData(data) {
         var distance = data.distance;
-        if (!localStorage.distance || Number(localStorage.distance) !== distance) {
-          localStorage.distance = distance;
-        } else {
-          return; // 不满足条件直接 return
-        }
         var unit = data.boxUnit;
         var num = Math.ceil(distance / unit) - 1;
         num = num < 0 ? 0 : num; // 对num进行过滤处理
@@ -95,13 +95,10 @@ angular.module('category.controller', ['categoryService'])
       }
 
     }])
-  .directive('categoryTouchBar', function () {
+  .directive('categoryTouchBar', function ($rootScope) {
     return {
       restrict: 'EA',
       replace: true,
-      scope: {
-        'boxHeight':'='
-      },
       link: function (scope, element) {
         var ele = element[0]; // 获取元素
         var eleTop = 0; // touchBar元素距离浏览器顶部位置初始化
@@ -112,7 +109,15 @@ angular.module('category.controller', ['categoryService'])
 
         // 初始化其他用到的数据
         var boxUnit = 16; // 此处是固定的单元字母高度
-        var boxHeight = scope.boxHeight * boxUnit;  // 此处需要根据字母数据调节，应对可能会发生变化的情况
+        var boxHeight = 0; // 初始化盒子高度
+
+        /* 接收获取的广播数据 */
+        $rootScope.$on("boxCount", function(e, data) {
+          if(!data) {
+            return ;
+          }
+          boxHeight = data * boxUnit; // 通过网络获取，计算得出整体高度
+        });
 
         // 滑动开始
         ionic.EventController.on('touchstart', function (e) {
@@ -133,6 +138,7 @@ angular.module('category.controller', ['categoryService'])
             boxUnit: boxUnit,
             distance: distance
           };
+
           scope.$emit('touchMove', moveObj); // 发送广播
         }, ele);
 
@@ -152,16 +158,4 @@ angular.module('category.controller', ['categoryService'])
         }, ele);
       }
     };
-  })
-  .directive('repeatFinish', function ($timeout) {
-    return {
-      restrict: 'A',
-      link: function (scope, element) {
-        if (scope.$last === true) {
-          $timeout(function () {
-            scope.$emit('repeatFinish', element.parent()[0].offsetHeight); // 发送广播
-          });
-        }
-      }
-    }
   });
