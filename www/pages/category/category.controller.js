@@ -23,9 +23,8 @@ angular.module('category.controller', ['categoryService'])
 
       // 得到所有分类信息
       function getAllCategory() {
-        // 此处处理假数据
+        // 此处只处理假数据，仅仅是个demo
         // 如果是真实数据，那么先判断本地是否存在，如果不存在，那么网络获取，如果存在，直接使用。
-        // 此处是demo，所以在这里直接处理。
         angular.forEach(categoryData, function (item) {
           if (item.firstletter) {
             dataAll.cate[item.firstletter] = dataAll.cate[item.firstletter] || []; // 初始化单元
@@ -40,16 +39,16 @@ angular.module('category.controller', ['categoryService'])
         }
 
         // 使用广播方式, 想到以后这些数据有可能动态加载，存在异步性
-        $rootScope.$broadcast("boxCount", dataAll.abc.length);
+        $rootScope.$broadcast("cate:boxCount", dataAll.abc.length);
         dataAll.abc.sort(); // 从A到Z排序
       }
 
       // 接收广播事件
-      $scope.$on('touchMove', function (event, data) {
+      $scope.$on('cate:touchMove', function (event, data) {
         getScrollData(data);
       });
       // 隐藏悬浮的字母
-      $scope.$on('touchEnd', function (event, data) {
+      $scope.$on('cate:touchEnd', function (event, data) {
         if (!data) {
           return;
         }
@@ -58,7 +57,7 @@ angular.module('category.controller', ['categoryService'])
         }, 300);
       });
       // 接收click广播
-      $scope.$on('touchBarClick', function (event, data) {
+      $scope.$on('cate:touchBarClick', function (event, data) {
         getScrollData(data);
       });
 
@@ -112,7 +111,7 @@ angular.module('category.controller', ['categoryService'])
         var boxHeight = 0; // 初始化盒子高度
 
         /* 接收获取的广播数据 */
-        $rootScope.$on("boxCount", function(e, data) {
+        $rootScope.$on("cate:boxCount", function(e, data) {
           if(!data) {
             return ;
           }
@@ -139,12 +138,12 @@ angular.module('category.controller', ['categoryService'])
             distance: distance
           };
 
-          scope.$emit('touchMove', moveObj); // 发送广播
+          scope.$emit('cate:touchMove', moveObj); // 发送广播
         }, ele);
 
         // 滑动结束隐藏
         ionic.EventController.on('touchend', function () {
-          scope.$emit('touchEnd', 1); // 发送广播
+          scope.$emit('cate:touchEnd', 1); // 发送广播
         }, ele);
 
         // 对单纯点击的支持
@@ -154,7 +153,7 @@ angular.module('category.controller', ['categoryService'])
             boxUnit: boxUnit,
             distance: (e.pageY || e.y) - eleTop
           };
-          scope.$emit('touchBarClick', moveObj); // 发送广播
+          scope.$emit('cate:touchBarClick', moveObj); // 发送广播
         }, ele);
       }
     };
