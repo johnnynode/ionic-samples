@@ -40,5 +40,8 @@
 - [缩放滑动效果的焦点图示例](./mds/scaleBanners.md)
 - [Related Blog](http://blog.csdn.net/tyro_java/article/details/77937586)
 
+## Splash
+- https://github.com/johnnynode/ionic-splash-demo
+
 ## License
 MIT
