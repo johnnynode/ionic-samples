@@ -5,7 +5,7 @@
 
 ## 安装
 - $ `cd ionic-sample`
-- $ `npm i`
+- $ `npm i` 或 $ `yarn install`
 
 ## 运行
 - $ `ionic serve`

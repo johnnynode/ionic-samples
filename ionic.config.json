@@ -3,7 +3,10 @@
   "app_id": "",
   "type": "ionic1",
   "watchPatterns": [
-    "scss/**/*"
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
   ],
   "integrations": {}
 }
