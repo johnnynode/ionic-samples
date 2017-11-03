@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "ionic-sample: An Ionic project",
   "scripts": {
-    "postinstall": "bower install --force"
+    "postinstall": "bower install --force && ionic serve"
   },
   "dependencies": {
     "cordova-plugin-screen-orientation": "^2.0.1",
