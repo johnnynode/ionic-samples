@@ -8,17 +8,17 @@
 - $ `npm i` 或 $ `yarn install`
 
 ## 运行
-- $ `ionic serve`
+- $ `gulp server`
 
 ## 备注
-- 只为演示，未使用gulpfile.js文件
+- 暂未全部完成
 - 未进行构建和跨域处理
 
 ## 关于samples
 
 - pdf 如果pdf长时间打不开，请翻墙，pdf预览地址是：https://mozilla.github.io/pdf.js/web/viewer.html
 - 视频源地址是videogular官网上的一个视频demo地址：http://static.videogular.com/assets/videos/videogular.mp4
-- 音频源使用网上链接易失效，存放于本地audio文件夹下：www/audio/music.mp3
+- 音频源使用网上链接易失效，存放于本地audio文件夹下：src/audio/music.mp3
 
 ## PdfLoading
 - [pdf展示效果示例](./mds/pdf.md)
