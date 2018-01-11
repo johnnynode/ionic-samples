@@ -12,19 +12,20 @@ angular.module('category.controller', ['categoryService'])
             var fn = $scope.fn = {};
             fn.go = appUtils.go;
             var dataAll = $scope.dataAll = {};
-            dataAll.abc = [];
-            dataAll.cate = {};
-            dataAll.mapContainer = {}; // 初始化一个盛放各个标签节点个数的对象
+
 
             // 视图事件
             $scope.$on('$ionicView.beforeEnter', function() {
-                // getAllCategory(); // 获取数据，本地或者从网络获取
+                getAllCategory(); // 获取数据，本地或者从网络获取
             });
-
-            getAllCategory();
 
             // 得到所有分类信息
             function getAllCategory() {
+                dataAll.abc = [];
+                dataAll.cate = {};
+                dataAll.mapContainer = {}; // 初始化一个盛放各个标签节点个数的对象
+                console.log('categoryData');
+                console.log(categoryData);
                 // 此处只处理假数据，仅仅是个demo
                 // 如果是真实数据，那么先判断本地是否存在，如果不存在，那么网络获取，如果存在，直接使用。
                 angular.forEach(categoryData, function(item) {
@@ -67,6 +68,8 @@ angular.module('category.controller', ['categoryService'])
 
             // 通用获取滚动事件
             function getScrollData(data) {
+                // console.log('data');
+                // console.log(data);
                 var distance = data.distance;
                 var unit = data.boxUnit;
                 var num = Math.ceil(distance / unit) - 1;
@@ -127,6 +130,8 @@ angular.module('category.controller', ['categoryService'])
                 ionic.EventController.on('touchstart', function(e) {
                     e.preventDefault();
                     eleTop = eleClientRectTop - boxHeight / 2; // 计算元素顶部距离浏览器顶部的位置
+                    console.log('eleTop');
+                    console.log(eleTop);
                 }, ele);
 
                 // 滑动中
