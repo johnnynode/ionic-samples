@@ -16,7 +16,7 @@ var open = require('gulp-open');
 
 var allPath = {
     src: ['./src'],
-    dist: ['./dist']
+    dist: ['./www']
 };
 
 var connectFlag = 0; // 用于控制connect任务中的root路径
@@ -36,14 +36,14 @@ var browser = platform === 'linux' ? 'google-chrome' : (
 // clean task
 gulp.task('clean', function() {
     return del([
-        allPath.dist + '/**/*'
+        allPath.dist[0]
     ]);
 });
 
 // 使用connect启动一个Web服务器
 gulp.task('connect', function() {
     connect.server({
-        root: connectFlag ? './dist' : './src',
+        root: connectFlag ? allPath.dist : allPath.src,
         livereload: {
             enable: true,
             port: portFlag ? 36000 : 36000
@@ -51,7 +51,7 @@ gulp.task('connect', function() {
         port: portFlag ? 8012 : 9012,
         middleware: function(connect, opt) {
             return [
-                /*
+                /* 这里做跨域处理
                 proxy(["/api"], {
                     target: 'your-url',
                     changeOrigin: true,
@@ -65,11 +65,19 @@ gulp.task('connect', function() {
     });
 });
 
+// 监控任务
 gulp.task('watch', function() {
     gulp.src(allPath.src)
         .pipe(plumber())
         .pipe(watch(allPath.src))
         .pipe(connect.reload());
+});
+
+// 复制任务
+gulp.task('copy', function() {
+    return gulp.src(allPath.src + '/**')
+        .pipe(plumber())
+        .pipe(gulp.dest(allPath.dist + '/'));
 });
 
 // 打开浏览器的任务
@@ -98,6 +106,7 @@ gulp.task('build', ['clean'], function() {
     });
 });
 
+// 构建之后开启服务器
 gulp.task('build-server', ['connect'], function() {
     connectFlag = 1;
     portFlag = 1;
