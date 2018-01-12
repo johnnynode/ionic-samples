@@ -7,12 +7,14 @@ var process = require('process');
 var runSequence = require('run-sequence');
 var watch = require('gulp-watch');
 var imagemin = require('gulp-imagemin'); // 压缩image
+var sass = require('gulp-sass'); // sass 文件处理
 var cleanCSS = require('gulp-clean-css'); // 压缩css
 var htmlmin = require('gulp-htmlmin'); // 压缩html
 var uglify = require('gulp-uglify'); // 压缩js
 var gutil = require('gulp-util');
 var del = require('del'); // 清空文件和文件夹
 var open = require('gulp-open');
+var _if = require('gulp-if'); // 引用判断
 
 var allPath = {
     src: './src',
@@ -83,6 +85,17 @@ gulp.task('copy', function() {
 // audio 任务 根据原项目添加，大部分情况是线上的，不会存在这个任务
 gulp.task('audio', function() {
     return gulp.src(allPath.src + '/audio/**', { base: allPath.src })
+        .pipe(plumber())
+        .pipe(gulp.dest(allPath.dist + '/'));
+});
+
+// css 任务
+gulp.task('css', function() {
+    return gulp.src(allPath.src + '/css/**', { base: allPath.src })
+        .pipe(plumber())
+        .pipe(_if('*.scss', sass.sync()))
+        .pipe(cleanCSS({ rebase: false }))
+        .pipe(concat('app.min.css'))
         .pipe(plumber())
         .pipe(gulp.dest(allPath.dist + '/'));
 });
