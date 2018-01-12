@@ -9,6 +9,7 @@ var watch = require('gulp-watch');
 var imagemin = require('gulp-imagemin'); // 压缩image
 var sass = require('gulp-sass'); // sass 文件处理
 var cleanCSS = require('gulp-clean-css'); // 压缩css
+var concat = require('gulp-concat');
 var htmlmin = require('gulp-htmlmin'); // 压缩html
 var uglify = require('gulp-uglify'); // 压缩js
 var gutil = require('gulp-util');
@@ -95,9 +96,9 @@ gulp.task('css', function() {
         .pipe(plumber())
         .pipe(_if('*.scss', sass.sync()))
         .pipe(cleanCSS({ rebase: false }))
-        .pipe(concat('app.min.css'))
+        .pipe(concat('/css/app.min.css'))
         .pipe(plumber())
-        .pipe(gulp.dest(allPath.dist + '/'));
+        .pipe(gulp.dest(allPath.dist));
 });
 
 // 打开浏览器的任务
