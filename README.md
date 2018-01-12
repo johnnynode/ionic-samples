@@ -6,7 +6,7 @@
 ## 安装
 - $ `cd ionic-sample`
 - $ `npm i` 或 $ `yarn install`
-
+- $ `bower install --force`
 ## 运行
 - $ `gulp server`
 
