@@ -15,8 +15,8 @@ var del = require('del'); // 清空文件和文件夹
 var open = require('gulp-open');
 
 var allPath = {
-    src: ['./src'],
-    dist: ['./www']
+    src: './src',
+    dist: './www'
 };
 
 var connectFlag = 0; // 用于控制connect任务中的root路径
@@ -36,7 +36,7 @@ var browser = platform === 'linux' ? 'google-chrome' : (
 // clean task
 gulp.task('clean', function() {
     return del([
-        allPath.dist[0]
+        allPath.dist
     ]);
 });
 
@@ -76,6 +76,13 @@ gulp.task('watch', function() {
 // 复制任务
 gulp.task('copy', function() {
     return gulp.src(allPath.src + '/**')
+        .pipe(plumber())
+        .pipe(gulp.dest(allPath.dist + '/'));
+});
+
+// audio 任务
+gulp.task('audio', function() {
+    return gulp.src(allPath.src + '/audio/**', { base: allPath.src })
         .pipe(plumber())
         .pipe(gulp.dest(allPath.dist + '/'));
 });
