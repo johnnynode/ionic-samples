@@ -80,7 +80,7 @@ gulp.task('copy', function() {
         .pipe(gulp.dest(allPath.dist + '/'));
 });
 
-// audio 任务
+// audio 任务 根据原项目添加，大部分情况是线上的，不会存在这个任务
 gulp.task('audio', function() {
     return gulp.src(allPath.src + '/audio/**', { base: allPath.src })
         .pipe(plumber())
