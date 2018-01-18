@@ -47,7 +47,9 @@ gulp.task('clean', function() {
 gulp.task('connect', function() {
     connect.server({
         root: connectFlag ? allPath.dist : allPath.src,
+        host: '127.0.0.1',
         livereload: {
+            hostname: '127.0.0.1',
             enable: true,
             port: portFlag ? 36000 : 36000
         },
