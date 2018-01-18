@@ -48,6 +48,7 @@ gulp.task('connect', function() {
     var root = connectFlag ? allPath.dist : allPath.src;
     connect.server({
         root: root,
+        fallback: root + '/index.html',
         host: '127.0.0.1',
         livereload: {
             hostname: '127.0.0.1',
