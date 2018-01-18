@@ -51,7 +51,7 @@ gulp.task('connect', function() {
         livereload: {
             hostname: '127.0.0.1',
             enable: true,
-            port: portFlag ? 36000 : 36000
+            port: portFlag ? 36000 : 35729
         },
         port: portFlag ? 8012 : 9012,
         middleware: function(connect, opt) {
