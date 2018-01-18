@@ -45,8 +45,9 @@ gulp.task('clean', function() {
 
 // 使用connect启动一个Web服务器
 gulp.task('connect', function() {
+    var root = connectFlag ? allPath.dist : allPath.src;
     connect.server({
-        root: connectFlag ? allPath.dist : allPath.src,
+        root: root,
         host: '127.0.0.1',
         livereload: {
             hostname: '127.0.0.1',
