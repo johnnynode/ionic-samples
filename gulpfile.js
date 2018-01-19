@@ -47,7 +47,9 @@ var allPath = {
         'templates': 'app/app.'+ timeStamp +'.templates.min.js'
     },
     // 图片路径
-    images: './src/images/**'
+    images: './src/images/**',
+    // css路径
+    appCss: './src/css/**/*.css'
 };
 
 // 定义动态插入的路径
@@ -84,10 +86,21 @@ gulp.task('bower-files', function() {
         .pipe(_if('*.css', cleanCSS({compatibility: 'ie8',rebase: true})))
         .pipe(_if('*.css', concat(allPath.replacePath.bowerCss)))
         .pipe(_if('*.css', gulp.dest(allPath.dist + '/.')))
+        // todo sass
         .pipe(_if('*.js', uglify()))
         .pipe(_if('*.js', concat(allPath.replacePath.bowerJs)))
         .pipe(_if('*.js', gulp.dest(allPath.dist + '/.')))
-    });
+});
+
+// 处理app 样式
+gulp.task('app-css', function() {
+    return gulp.src(allPath.appCss)
+        .pipe(plumber())
+        .pipe(cleanCSS({compatibility: 'ie8',rebase: true}))
+        .pipe(postcss([autoprefixer()]))
+        .pipe(concat(allPath.replacePath.appCss))
+        .pipe(gulp.dest(allPath.dist + '/.'));
+});
 
 // clean task
 gulp.task('clean', function() {
