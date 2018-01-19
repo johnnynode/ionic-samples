@@ -1,21 +1,21 @@
 //引入插件
-var gulp = require('gulp');
-var connect = require('gulp-connect');
-var proxy = require('http-proxy-middleware');
-var plumber = require('gulp-plumber');
-var process = require('process');
-var runSequence = require('run-sequence');
-var watch = require('gulp-watch');
-var imagemin = require('gulp-imagemin'); // 压缩image
-var sass = require('gulp-sass'); // sass 文件处理
-var cleanCSS = require('gulp-clean-css'); // 压缩css
-var concat = require('gulp-concat');
-var htmlmin = require('gulp-htmlmin'); // 压缩html
-var uglify = require('gulp-uglify'); // 压缩js
-var gutil = require('gulp-util');
-var del = require('del'); // 清空文件和文件夹
-var open = require('gulp-open');
-var _if = require('gulp-if'); // 引用判断
+var gulp = require('gulp'),
+    connect = require('gulp-connect'),
+    proxy = require('http-proxy-middleware'),
+    plumber = require('gulp-plumber'),
+    process = require('process'),
+    runSequence = require('run-sequence'),
+    watch = require('gulp-watch'),
+    imagemin = require('gulp-imagemin'), // 压缩image
+    sass = require('gulp-sass'), // sass 文件处理
+    cleanCSS = require('gulp-clean-css'), // 压缩css
+    concat = require('gulp-concat'),
+    htmlmin = require('gulp-htmlmin'), // 压缩html
+    uglify = require('gulp-uglify'), // 压缩js
+    gutil = require('gulp-util'),
+    del = require('del'), // 清空文件和文件夹
+    open = require('gulp-open'),
+    _if = require('gulp-if'); // 引用判断
 
 var allPath = {
     src: './src',
@@ -125,9 +125,11 @@ gulp.task('server', ['connect'], function() {
 
 // 开始构建 todo
 gulp.task('build', ['clean'], function() {
-    gutil.log(gutil.colors.yellow('构建开始!'));
+    gutil.log(gutil.colors.yellow('🚄 构建开始!'));
+    console.time('build');
     runSequence(productionTask, function() {
-        gutil.log(gutil.colors.yellow('构建完成!'));
+        gutil.log(gutil.colors.yellow('🔥 构建完成,总共用时：'));
+        console.timeEnd('build');
     });
 });
 
