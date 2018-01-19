@@ -6,7 +6,8 @@ angular.module('ionic-samples', [
         'directives',
         'ionic-native-transitions',
         'ngCordova',
-        'ngCookies'
+        'ngCookies',
+        'templates'
     ])
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
