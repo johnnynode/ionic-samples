@@ -4,6 +4,7 @@
     "description": "ionic-sample: An Ionic project",
     "scripts": {},
     "dependencies": {
+        "autoprefixer": "^7.2.5",
         "gulp": "^3.9.1",
         "gulp-clean-css": "^3.9.2",
         "gulp-concat": "^2.6.1",
