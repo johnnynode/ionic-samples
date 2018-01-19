@@ -42,11 +42,11 @@ var allPath = {
     index:'./src/index.html',
     // 用于替换的路径
     replacePath: {
-        'bowerCss': 'app/vendor.'+ timeStamp +'.min.css',
-        'appCss':'app/app.'+ timeStamp +'.min.css',
-        'bowerJs':'app/vendor.'+ timeStamp +'.min.js',
-        'appJs': 'app/app.'+ timeStamp +'.min.js',
-        'templates': 'app/app.'+ timeStamp +'.templates.min.js'
+        'bowerCss': 'app/vendor.' + timeStamp + '.min.css',
+        'appCss':'app/app.' + timeStamp + '.min.css',
+        'bowerJs':'app/vendor.' + timeStamp + '.min.js',
+        'appJs': 'app/app.' + timeStamp + '.min.js',
+        'templates': 'app/app.templates.' + timeStamp + '.min.js'
     },
     // 图片路径
     images: './src/images/**',
