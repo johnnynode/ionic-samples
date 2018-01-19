@@ -24,7 +24,8 @@ var gulp = require('gulp'),
 
 var allPath = {
     src: './src',
-    dist: './www'
+    dist: './www',
+    index:'./src/index.html'
 };
 
 // 判断操作系统
@@ -41,7 +42,14 @@ var platform = process.platform,
 // 生产模式任务
 var productionTask = [];
 
-
+// 处理index.html相关引入脚本，包括样式和脚本
+gulp.task('index', function () {
+    return gulp.src(allPath.index)
+        .pipe(plumber())
+        .pipe(htmlreplace(allPath.replacePath))
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest(allPath.dist + '/.'));
+});
 
 // clean task
 gulp.task('clean', function() {
