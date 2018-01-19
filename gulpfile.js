@@ -22,25 +22,26 @@ var gulp = require('gulp'),
     open = require('gulp-open'),
     _if = require('gulp-if'); // 引用判断
 
-
 var allPath = {
     src: './src',
     dist: './www'
 };
 
-var connectFlag = 0; // 用于控制connect任务中的root路径
-var portFlag = 0; // 用于控制端口不同
+// 判断操作系统
+var platform = process.platform,
+    // 定义一组browser的判断
+    browser = platform === 'linux' ? 'google-chrome' : (
+    platform === 'darwin' ? 'google chrome' : (
+        platform === 'win32' ? 'chrome' : 'firefox')),
+    // 定义标识
+    connectFlag = 0, // 用于控制connect任务中的root路径
+    portFlag = 0; // 用于控制端口不同
+    timeStamp = new Date().getTime(); // 添加时间戳，标识每次构建生成的不同的文件
 
 // 生产模式任务
 var productionTask = [];
 
-// 判断操作系统
-var platform = process.platform;
 
-// 定义一组browser的判断
-var browser = platform === 'linux' ? 'google-chrome' : (
-    platform === 'darwin' ? 'google chrome' : (
-        platform === 'win32' ? 'chrome' : 'firefox'));
 
 // clean task
 gulp.task('clean', function() {
@@ -51,13 +52,14 @@ gulp.task('clean', function() {
 
 // 使用connect启动一个Web服务器
 gulp.task('connect', function() {
-    var root = connectFlag ? allPath.dist : allPath.src;
+    var root = connectFlag ? allPath.dist : allPath.src,
+        hostname = '127.0.0.1';
     connect.server({
         root: root,
         fallback: root + '/index.html',
-        host: '127.0.0.1',
+        host: hostname,
         livereload: {
-            hostname: '127.0.0.1',
+            hostname: hostname,
             enable: true,
             port: portFlag ? 36000 : 35729
         },
