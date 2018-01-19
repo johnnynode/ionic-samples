@@ -23,22 +23,29 @@ var gulp = require('gulp'),
     open = require('gulp-open'),
     _if = require('gulp-if'); // 引用判断
 
-var allPath = {
-    src: './src',
-    dist: './www',
-    index:'./src/index.html'
-};
-
-// 判断操作系统
-var platform = process.platform,
+var platform = process.platform, // 判断操作系统
     // 定义一组browser的判断
     browser = platform === 'linux' ? 'google-chrome' : (
     platform === 'darwin' ? 'google chrome' : (
         platform === 'win32' ? 'chrome' : 'firefox')),
     // 定义标识
     connectFlag = 0, // 用于控制connect任务中的root路径
-    portFlag = 0; // 用于控制端口不同
+    portFlag = 0, // 用于控制端口不同
     timeStamp = new Date().getTime(); // 添加时间戳，标识每次构建生成的不同的文件
+
+var allPath = {
+    src: './src',
+    dist: './www',
+    index:'./src/index.html',
+    // 用于替换的路径
+    replacePath: {
+        'bowerCss': 'app/vendor.'+ timeStamp +'.min.css',
+        'appCss':'app/app.'+ timeStamp +'.min.css',
+        'bowerJs':'app/vendor.'+ timeStamp +'.min.js',
+        'appJs': 'app/app.'+ timeStamp +'.min.js',
+        'templates': 'app/app.'+ timeStamp +'.templates.min.js'
+    }
+};
 
 // 生产模式任务
 var productionTask = [];
