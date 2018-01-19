@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     bowerFiles = require('main-bower-files'), // bower相关文件处理
     postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
     del = require('del'), // 清空文件和文件夹
     open = require('gulp-open'),
     _if = require('gulp-if'); // 引用判断
