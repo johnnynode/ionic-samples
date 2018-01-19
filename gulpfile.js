@@ -51,7 +51,9 @@ var allPath = {
     // 图片路径
     images: './src/images/**',
     // css路径
-    appCss: './src/css/**/*.css'
+    appCss: './src/css/**/*.css',
+    // js 路径
+    appJs: ['./src/js/**/*.js', './src/components/**/*.js', './src/pages/**/*.js', '!./src/js/app.templates.js']
 };
 
 // 定义动态插入的路径
