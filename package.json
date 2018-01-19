@@ -12,6 +12,7 @@
         "gulp-htmlmin": "^4.0.0",
         "gulp-if": "^2.0.2",
         "gulp-imagemin": "^4.1.0",
+        "gulp-inject": "^4.3.0",
         "gulp-open": "^2.1.0",
         "gulp-plumber": "^1.1.0",
         "gulp-postcss": "^7.0.1",
