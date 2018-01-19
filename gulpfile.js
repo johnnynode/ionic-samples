@@ -117,7 +117,7 @@ gulp.task('css', function() {
 gulp.task('open', function() {
     // gulp-open 的选项
     var browserOptions = {
-        uri: 'http://localhost:' + (portFlag ? '8012' : '9012'),
+        uri: 'http://127.0.0.1:' + (portFlag ? '8012' : '9012'),
         app: browser
     };
     gulp.src(allPath.src)
