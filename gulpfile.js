@@ -17,6 +17,7 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     inject = require('gulp-inject'),
+    templateCache = require('gulp-angular-templatecache'),
     del = require('del'), // 清空文件和文件夹
     open = require('gulp-open'),
     _if = require('gulp-if'); // 引用判断
