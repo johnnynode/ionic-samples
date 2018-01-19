@@ -77,6 +77,18 @@ gulp.task('images', function() {
         .pipe(gulp.dest(allPath.dist + '/images'));
 });
 
+// 处理bower相关的样式和脚本构建, 只针对css和js进行处理
+gulp.task('bower-files', function() {
+    return gulp.src(allPath.injectPath.bowerFiles)
+        .pipe(plumber())
+        .pipe(_if('*.css', cleanCSS({compatibility: 'ie8',rebase: true})))
+        .pipe(_if('*.css', concat(allPath.replacePath.bowerCss)))
+        .pipe(_if('*.css', gulp.dest(allPath.dist + '/.')))
+        .pipe(_if('*.js', uglify()))
+        .pipe(_if('*.js', concat(allPath.replacePath.bowerJs)))
+        .pipe(_if('*.js', gulp.dest(allPath.dist + '/.')))
+    });
+
 // clean task
 gulp.task('clean', function() {
     return del([
