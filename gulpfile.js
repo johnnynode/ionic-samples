@@ -45,7 +45,9 @@ var allPath = {
         'bowerJs':'app/vendor.'+ timeStamp +'.min.js',
         'appJs': 'app/app.'+ timeStamp +'.min.js',
         'templates': 'app/app.'+ timeStamp +'.templates.min.js'
-    }
+    },
+    // 图片路径
+    images: './src/images/**'
 };
 
 // 定义动态插入的路径
@@ -67,7 +69,13 @@ gulp.task('index', function () {
         .pipe(gulp.dest(allPath.dist + '/.'));
 });
 
-
+// 处理图片
+gulp.task('images', function() {
+    return gulp.src(allPath.images)
+        .pipe(plumber())
+        .pipe(imagemin())
+        .pipe(gulp.dest(allPath.dist + '/images'));
+});
 
 // clean task
 gulp.task('clean', function() {
