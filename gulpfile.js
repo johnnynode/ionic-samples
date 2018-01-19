@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'), // 压缩js
     gutil = require('gulp-util'),
     bowerFiles = require('main-bower-files'), // bower相关文件处理
+    postcss = require('gulp-postcss'),
     del = require('del'), // 清空文件和文件夹
     open = require('gulp-open'),
     _if = require('gulp-if'); // 引用判断
