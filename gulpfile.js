@@ -33,6 +33,7 @@ var platform = process.platform, // 判断操作系统
     portFlag = 0, // 用于控制端口不同
     timeStamp = new Date().getTime(); // 添加时间戳，标识每次构建生成的不同的文件
 
+// 定义所有的路径
 var allPath = {
     src: './src',
     dist: './www',
@@ -47,6 +48,13 @@ var allPath = {
     }
 };
 
+// 定义动态插入的路径
+allPath.injectPath = {
+    'bowerFiles': bowerFiles(),
+    'appCss': allPath.appCss,
+    'appJs': allPath.appJs
+};
+
 // 生产模式任务
 var productionTask = [];
 
@@ -58,6 +66,8 @@ gulp.task('index', function () {
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(allPath.dist + '/.'));
 });
+
+
 
 // clean task
 gulp.task('clean', function() {
