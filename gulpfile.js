@@ -17,6 +17,7 @@ var gulp = require('gulp'),
     open = require('gulp-open'),
     _if = require('gulp-if'); // 引用判断
 
+
 var allPath = {
     src: './src',
     dist: './www'
@@ -125,8 +126,8 @@ gulp.task('server', ['connect'], function() {
 
 // 开始构建 todo
 gulp.task('build', ['clean'], function() {
-    gutil.log(gutil.colors.yellow('🚄 构建开始!'));
     console.time('build');
+    gutil.log(gutil.colors.yellow('🚄 构建开始!'));
     runSequence(productionTask, function() {
         gutil.log(gutil.colors.yellow('🔥 构建完成,总共用时：'));
         console.timeEnd('build');
