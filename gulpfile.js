@@ -19,8 +19,10 @@ var gulp = require('gulp'),
     htmlreplace = require('gulp-html-replace'),
     inject = require('gulp-inject'),
     templateCache = require('gulp-angular-templatecache'),
+    ngAnnotate = require('gulp-ng-annotate'),
     del = require('del'), // 清空文件和文件夹
     open = require('gulp-open'),
+    stripDebug = require('gulp-strip-debug'), // Strip console, alert, and debugger statements
     _if = require('gulp-if'); // 引用判断
 
 var platform = process.platform, // 判断操作系统
@@ -102,7 +104,16 @@ gulp.task('app-css', function() {
         .pipe(gulp.dest(allPath.dist + '/.'));
 });
 
-
+// 处理 appjs
+gulp.task('app-js', function() {
+    return gulp.src(allPath.appJs)
+        .pipe(plumber())
+        .pipe(ngAnnotate())
+        .pipe(stripDebug())
+        .pipe(uglify())
+        .pipe(concat(allPath.replacePath.appJs))
+        .pipe(gulp.dest(allPath.dist + '/.'));
+});
 
 // clean task
 gulp.task('clean', function() {
