@@ -1173,6 +1173,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
+esprima@^2.1:
+  version "2.7.3"
+  resolved "http://registry.npm.taobao.org/esprima/download/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
+
 esprima@^4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/esprima/download/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
@@ -1989,6 +1993,14 @@ gulp-sourcemaps@1.6.0:
     strip-bom "^2.0.0"
     through2 "^2.0.0"
     vinyl "^1.0.0"
+
+gulp-strip-debug@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/gulp-strip-debug/download/gulp-strip-debug-2.0.0.tgz#defed1a827d748fc1d30b1d41fdb1f32e88d5f4f"
+  dependencies:
+    plugin-error "^0.1.2"
+    strip-debug "^2.0.0"
+    through2 "^2.0.0"
 
 gulp-uglify@^3.0.0:
   version "3.0.0"
@@ -4075,6 +4087,46 @@ rndm@1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/rndm/download/rndm-1.2.0.tgz#f33fe9cfb52bbfd520aa18323bc65db110a1b76c"
 
+rocambole-node-remove@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/rocambole-node-remove/download/rocambole-node-remove-1.0.0.tgz#bd49b13dbe6122758374ffd247d8a739e821486f"
+  dependencies:
+    rocambole-token "^1.1.0"
+
+rocambole-node-update@^1.0.0, rocambole-node-update@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/rocambole-node-update/download/rocambole-node-update-1.0.1.tgz#a3ffc968b0f3bcd9cf2a9336dc0db7e254c83c5a"
+  dependencies:
+    rocambole-token "^1.2.1"
+
+rocambole-strip-alert@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/rocambole-strip-alert/download/rocambole-strip-alert-1.0.0.tgz#3b255fe6f18d6301f805a14e570b1f1f2dba857f"
+  dependencies:
+    rocambole-node-update "^1.0.1"
+
+rocambole-strip-console@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/rocambole-strip-console/download/rocambole-strip-console-1.0.0.tgz#2b97e3dfa6e19d4528ebe81a94231dc9e8aaca0b"
+  dependencies:
+    rocambole-node-update "^1.0.0"
+
+rocambole-strip-debugger@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/rocambole-strip-debugger/download/rocambole-strip-debugger-1.0.0.tgz#1c5502420c3d6ef5e23a70b80547dfd1d4bbcb76"
+  dependencies:
+    rocambole-node-remove "^1.0.0"
+
+rocambole-token@^1.1.0, rocambole-token@^1.2.1:
+  version "1.2.1"
+  resolved "http://registry.npm.taobao.org/rocambole-token/download/rocambole-token-1.2.1.tgz#c785df7428dc3cb27ad7897047bd5238cc070d35"
+
+rocambole@^0.7.0:
+  version "0.7.0"
+  resolved "http://registry.npm.taobao.org/rocambole/download/rocambole-0.7.0.tgz#f6c79505517dc42b6fb840842b8b953b0f968585"
+  dependencies:
+    esprima "^2.1"
+
 run-sequence@^2.2.1:
   version "2.2.1"
   resolved "http://registry.npm.taobao.org/run-sequence/download/run-sequence-2.2.1.tgz#1ce643da36fd8c7ea7e1a9329da33fc2b8898495"
@@ -4415,6 +4467,15 @@ strip-bom@^2.0.0:
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-2.0.0.tgz#6219a85616520491f35788bdbf1447a99c7e6b0e"
   dependencies:
     is-utf8 "^0.2.0"
+
+strip-debug@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/strip-debug/download/strip-debug-2.0.0.tgz#f3a177c755c3a58acb26e41a06ca13f121e984c9"
+  dependencies:
+    rocambole "^0.7.0"
+    rocambole-strip-alert "^1.0.0"
+    rocambole-strip-console "^1.0.0"
+    rocambole-strip-debugger "^1.0.0"
 
 strip-dirs@^1.0.0:
   version "1.1.1"

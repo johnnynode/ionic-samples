@@ -86,7 +86,6 @@ gulp.task('bower-files', function() {
         .pipe(_if('*.css', cleanCSS({compatibility: 'ie8',rebase: true})))
         .pipe(_if('*.css', concat(allPath.replacePath.bowerCss)))
         .pipe(_if('*.css', gulp.dest(allPath.dist + '/.')))
-        // todo sass
         .pipe(_if('*.js', uglify()))
         .pipe(_if('*.js', concat(allPath.replacePath.bowerJs)))
         .pipe(_if('*.js', gulp.dest(allPath.dist + '/.')))
@@ -96,11 +95,14 @@ gulp.task('bower-files', function() {
 gulp.task('app-css', function() {
     return gulp.src(allPath.appCss)
         .pipe(plumber())
+        // todo sass
         .pipe(cleanCSS({compatibility: 'ie8',rebase: true}))
         .pipe(postcss([autoprefixer()]))
         .pipe(concat(allPath.replacePath.appCss))
         .pipe(gulp.dest(allPath.dist + '/.'));
 });
+
+
 
 // clean task
 gulp.task('clean', function() {
