@@ -16,6 +16,7 @@ var gulp = require('gulp'),
     bowerFiles = require('main-bower-files'), // bower相关文件处理
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
+    htmlreplace = require('gulp-html-replace'),
     inject = require('gulp-inject'),
     templateCache = require('gulp-angular-templatecache'),
     del = require('del'), // 清空文件和文件夹
