@@ -53,7 +53,9 @@ var allPath = {
     // css路径
     appCss: './src/css/**/*.css',
     // js 路径
-    appJs: ['./src/js/**/*.js', './src/components/**/*.js', './src/pages/**/*.js', '!./src/js/app.templates.js']
+    appJs: ['./src/js/**/*.js', './src/components/**/*.js', './src/pages/**/*.js', '!./src/js/app.templates.js'],
+    // html 模板路径
+    templates:['./src/components/**/*.html', './src/pages/**/*.html']
 };
 
 // 定义动态插入的路径
@@ -114,6 +116,19 @@ gulp.task('app-js', function() {
         .pipe(stripDebug())
         .pipe(uglify())
         .pipe(concat(allPath.replacePath.appJs))
+        .pipe(gulp.dest(allPath.dist + '/.'));
+});
+
+// 压缩 html 并将它们模板化
+gulp.task('templates', function() {
+    return gulp.src(allPath.templates)
+        .pipe(plumber())
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(templateCache({
+            standalone: true
+        }))
+        .pipe(uglify())
+        .pipe(concat(allPath.replacePath.templates))
         .pipe(gulp.dest(allPath.dist + '/.'));
 });
 
