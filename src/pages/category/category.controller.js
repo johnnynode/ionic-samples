@@ -2,11 +2,12 @@ angular.module('category.controller', ['categoryService'])
     .controller('CategoryCtrl', [
         '$scope',
         '$rootScope',
+        '$http',
         '$timeout',
         '$ionicScrollDelegate',
         'appUtils',
         'categoryData',
-        function($scope, $rootScope, $timeout, $ionicScrollDelegate, appUtils, categoryData) {
+        function($scope, $rootScope, $http, $timeout, $ionicScrollDelegate, appUtils, categoryData) {
             /* 初始化数据模型 */
             $scope.isLoading = false;
             var fn = $scope.fn = {};
@@ -18,15 +19,9 @@ angular.module('category.controller', ['categoryService'])
                 getAllCategory(); // 获取数据，本地或者从网络获取
             });
 
-            // 得到所有分类信息
-            function getAllCategory() {
-                dataAll.abc = [];
-                dataAll.cate = {};
-                dataAll.mapContainer = {}; // 初始化一个盛放各个标签节点个数的对象
-
-                // 此处只处理假数据，仅仅是个demo
-                // 如果是真实数据，那么先判断本地是否存在，如果不存在，那么网络获取，如果存在，直接使用。
-                angular.forEach(categoryData, function(item) {
+            // 对请求过来的数据进行聚类处理
+            function handleData(data) {
+                angular.forEach(data, function(item) {
                     if (item.firstletter) {
                         dataAll.cate[item.firstletter] = dataAll.cate[item.firstletter] || []; // 初始化单元
                         dataAll.cate[item.firstletter].push(item);
@@ -42,6 +37,26 @@ angular.module('category.controller', ['categoryService'])
                 // 使用广播方式, 想到以后这些数据有可能动态加载，存在异步性
                 $rootScope.$broadcast("cate:boxCount", dataAll.abc.length);
                 dataAll.abc.sort(); // 从A到Z排序
+            }
+
+            // 得到所有分类信息
+            function getAllCategory() {
+                dataAll.abc = [];
+                dataAll.cate = {};
+                dataAll.mapContainer = {}; // 初始化一个盛放各个标签节点个数的对象
+
+                // 如果是真实数据，那么先判断本地是否存在，如果不存在，那么网络获取，如果存在，直接使用。
+                // 模拟请求
+                $http.get("/data/category.json")
+                    .success(function (data) {
+                        // 判断是否有数据
+                        if (!(data && data.length)) {
+                            return;
+                        }
+                        // 处理数据
+                        handleData(data);
+                    });
+                
             }
 
             // 接收广播事件
