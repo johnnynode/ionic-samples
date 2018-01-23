@@ -132,6 +132,19 @@ gulp.task('templates', function() {
         .pipe(gulp.dest(allPath.dist + '/.'));
 });
 
+// 插入任务
+gulp.task('inject', function () {
+    gulp.src(allPath.index)
+        .pipe(plumber())
+        // 注入bower相关的 css 和 js
+        .pipe(inject(gulp.src(allPath.injectPath.bowerFiles, {read: false}), {name:'bower', relative: true}))
+        // 注入自己模块的css
+        .pipe(inject(gulp.src(allPath.injectPath.appCss, {read: false}), {starttag: '<!-- inject:appCss:{{ext}} -->', relative: true}))
+        // 注入自己模块的js
+        .pipe(inject(gulp.src(allPath.injectPath.appJs, {read: false}), {starttag: '<!-- inject:appJs:{{ext}} -->', relative: true}))
+        .pipe(gulp.dest(allPath.src))
+});
+
 // clean task
 gulp.task('clean', function() {
     return del([

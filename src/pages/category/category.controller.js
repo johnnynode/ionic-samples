@@ -34,8 +34,7 @@ angular.module('category.controller', ['categoryService'])
                     dataAll.mapContainer[k] = dataAll.cate[k].length; // 存储每个字母结点代表的分类的学科个数。
                 }
 
-                // 使用广播方式, 想到以后这些数据有可能动态加载，存在异步性
-                $rootScope.$broadcast("cate:boxCount", dataAll.abc.length);
+                $rootScope.$broadcast("cate:boxCount", dataAll.abc.length); // 使用广播方式传递数据
                 dataAll.abc.sort(); // 从A到Z排序
             }
 
@@ -56,7 +55,6 @@ angular.module('category.controller', ['categoryService'])
                         // 处理数据
                         handleData(data);
                     });
-                
             }
 
             // 接收广播事件
