@@ -9,11 +9,14 @@
 - $ `bower install --force` (manual operation not in scripts)
 
 ## 运行
-- $ `gulp server`
+- $ `gulp server` 
 
-## 备注
-- 跨域处理在gulpfile注释中,需自己替换
-- 构建功能正在进行中
+## 构建
+- $ `gulp build`
+
+## 构建后测试运行
+- $ `gulp build-server`
+
 
 ## 关于samples
 
