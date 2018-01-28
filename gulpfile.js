@@ -233,7 +233,7 @@ gulp.task('open', function() {
 gulp.task('server', function() {
     connectFlag = 0;
     portFlag = 0;
-    runSequence(['connect', 'watch', 'open']);
+    runSequence(['connect', 'watch', 'inject', 'open']);
 });
 
 // 开始构建 todo
