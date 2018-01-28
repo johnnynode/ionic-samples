@@ -180,15 +180,14 @@ gulp.task('connect', function() {
         port: portFlag ? 8012 : 9012,
         middleware: function(connect, opt) {
             return [
-                /* 这里做跨域处理
-                proxy(["/api"], {
-                    target: 'your-url',
+                // 这里做跨域处理
+                proxy(["/pdf"], {
+                    target: 'https://mozilla.github.io',
                     changeOrigin: true,
                     pathRewrite: {
-                        '^/api': '/'
+                        '^/pdf': '/'
                     }
                 })
-                */
             ]
         }
     });

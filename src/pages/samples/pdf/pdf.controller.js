@@ -3,8 +3,12 @@ angular.module('ionic-samples')
         '$scope',
         '$sce',
         'appUtils',
-        function($scope, $sce, appUtils) {
-            $scope.pdfSrc = $sce.trustAsResourceUrl('https://mozilla.github.io/pdf.js/web/viewer.html');
+        'global',
+        function($scope, $sce, appUtils, global) {
+            var pdfUrl = global.apiUrl().pdf + '/pdf.js/web/viewer.html';
+            console.log('pdfUrl');
+            console.log(pdfUrl);
+            $scope.pdfSrc = $sce.trustAsResourceUrl(pdfUrl);
             $scope.back = appUtils.back;
         }
     ]);
