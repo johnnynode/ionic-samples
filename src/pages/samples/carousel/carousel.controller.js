@@ -56,7 +56,6 @@ angular.module('ionic-samples')
           if(!data) {
             return;
           }
-          $scope.volList = data;
           $scope.magList = $scope.magList.concat(data);
         });
       }
