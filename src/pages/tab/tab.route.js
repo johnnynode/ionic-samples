@@ -1,4 +1,4 @@
-angular.module('tab.route', ['tab.controller'])
+angular.module('ionic-samples')
     .config(function($stateProvider) {
         $stateProvider
             .state('tab', {

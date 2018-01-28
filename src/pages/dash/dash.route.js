@@ -1,4 +1,4 @@
-angular.module('dash.route', ['dash.controller'])
+angular.module('ionic-samples')
     .config(function($stateProvider) {
         $stateProvider
             .state('tab.dash', {

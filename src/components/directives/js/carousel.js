@@ -1,7 +1,7 @@
 (function (angular) {
   "use strict";
   // 定义一些通用的指令
-  angular.module('directives.carousel', [])
+  angular.module('ionic-samples')
     .directive('homeSlider', function (settings, $compile, $timeout) {
       return {
         restrict: 'A',

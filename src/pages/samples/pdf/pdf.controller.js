@@ -1,4 +1,4 @@
-angular.module('samples.pdf.controller', [])
+angular.module('ionic-samples')
     .controller('PdfCtrl', [
         '$scope',
         '$sce',

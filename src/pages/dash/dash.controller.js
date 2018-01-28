@@ -1,2 +1,2 @@
-angular.module('dash.controller', [])
+angular.module('ionic-samples')
     .controller('DashCtrl', ['$scope', function($scope) {}]);

@@ -1,4 +1,4 @@
-angular.module('samples.video.controller', [])
+angular.module('ionic-samples')
     .controller('VideoCtrl', [
         '$scope',
         '$sce',

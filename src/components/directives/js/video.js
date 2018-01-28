@@ -1,6 +1,6 @@
 (function(angular) {
     "use strict";
-    angular.module('directives.video', [])
+    angular.module('ionic-samples')
         .directive('videoContainer', function(appUtils) {
             return {
                 restrict: 'EA',

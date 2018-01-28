@@ -1,9 +1,6 @@
 (function(angular) {
     'use strict';
-    angular.module('directives', [
-            'directives.video',
-            'directives.mp3'
-        ])
+    angular.module('ionic-samples')
         /* 自动获取焦点 */
         .directive('autoFocus', function($timeout, $cordovaKeyboard) {
             return {

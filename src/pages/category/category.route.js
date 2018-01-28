@@ -1,4 +1,4 @@
-angular.module('category.route', ['category.controller'])
+angular.module('ionic-samples')
     .config(function($stateProvider) {
         $stateProvider
             .state('tab.category', {

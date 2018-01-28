@@ -1,4 +1,4 @@
-angular.module('samples.mp3.controller', [])
+angular.module('ionic-samples')
     .controller('Mp3Ctrl', [
         '$scope',
         '$sce',

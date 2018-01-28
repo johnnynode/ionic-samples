@@ -1,6 +1,6 @@
 (function (angular) {
   // 提供数据支持
-  angular.module('carouselDataSupport', [])
+  angular.module('ionic-samples')
     .factory('CarouselData', [
       function () {
         return {

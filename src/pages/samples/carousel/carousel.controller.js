@@ -1,4 +1,4 @@
-angular.module('samples.carousel.controller', ['samples.carousel.directive', 'carouselDataSupport'])
+angular.module('ionic-samples')
   .controller('MarouselCtrl', [
     '$scope',
     '$timeout',

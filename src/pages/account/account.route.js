@@ -1,4 +1,4 @@
-angular.module('account.route', ['account.controller'])
+angular.module('ionic-samples')
     .config(function($stateProvider) {
         $stateProvider
             .state('tab.account', {

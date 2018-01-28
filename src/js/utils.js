@@ -1,6 +1,6 @@
 (function(angular) {
     // 配置模块，控制不同平台的兼容性
-    angular.module('utils', [])
+    angular.module('ionic-samples')
         .factory('appUtils', [
             '$state',
             '$ionicViewSwitcher',

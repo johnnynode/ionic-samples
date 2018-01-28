@@ -1,4 +1,4 @@
-angular.module('chatDetail.route', ['chatDetail.controller'])
+angular.module('ionic-samples')
     .config(function($stateProvider) {
         $stateProvider
             .state('tab.chat-detail', {

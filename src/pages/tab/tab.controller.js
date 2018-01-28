@@ -1,2 +1,2 @@
-  angular.module('tab.controller', [])
+  angular.module('ionic-samples')
       .controller('TabCtrl', function($scope) {});

@@ -1,6 +1,6 @@
 (function(angular) {
     "use strict";
-    angular.module('directives.mp3', [])
+    angular.module('ionic-samples')
         .directive('mp3Container', function($timeout, appUtils) {
             return {
                 restrict: 'EA',

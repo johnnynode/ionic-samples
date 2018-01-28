@@ -1,4 +1,4 @@
-angular.module('samples.mp3.route', ['samples.mp3.controller'])
+angular.module('ionic-samples')
     .config(function($stateProvider) {
         $stateProvider
             .state('mp3', {

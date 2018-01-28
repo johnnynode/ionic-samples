@@ -1,4 +1,4 @@
-angular.module('samples.carousel.route', ['samples.carousel.controller'])
+angular.module('ionic-samples')
     .config(function($stateProvider) {
         $stateProvider
             .state('carousel', {

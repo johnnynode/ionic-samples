@@ -1,8 +1,5 @@
 angular.module('ionic-samples', [
         'ionic',
-        'config',
-        'utils',
-        'directives',
         'ionic-native-transitions',
         'ngCordova',
         'ngCookies',

@@ -1,4 +1,4 @@
-angular.module('category.controller', ['categoryService'])
+angular.module('ionic-samples')
     .controller('CategoryCtrl', [
         '$scope',
         '$rootScope',
@@ -6,8 +6,7 @@ angular.module('category.controller', ['categoryService'])
         '$timeout',
         '$ionicScrollDelegate',
         'appUtils',
-        'categoryData',
-        function($scope, $rootScope, $http, $timeout, $ionicScrollDelegate, appUtils, categoryData) {
+        function($scope, $rootScope, $http, $timeout, $ionicScrollDelegate, appUtils) {
             /* 初始化数据模型 */
             $scope.isLoading = false;
             var fn = $scope.fn = {};

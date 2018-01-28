@@ -1,6 +1,6 @@
 (function(angular) {
     // 配置模块，控制不同平台的兼容性
-    angular.module('config', [])
+    angular.module('ionic-samples')
         .config(function($urlRouterProvider, $httpProvider, $ionicConfigProvider) {
             $urlRouterProvider.otherwise('/tab/dash'); // 默认路由
             // $httpProvider.interceptors.push('authInterceptor'); // 设置拦截器
