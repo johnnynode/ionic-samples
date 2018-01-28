@@ -58,7 +58,7 @@ var allPath = {
     // js 路径
     appJs: ['./src/js/**/*.js', './src/components/**/*.js', './src/pages/**/*.js', '!./src/js/app.templates.js'],
     // html 模板路径
-    templates:['./src/components/**/*.html', './src/pages/**/*.html']
+    templates:['./src/pages/**/*.html']
 };
 
 // 定义动态插入的路径
@@ -69,7 +69,7 @@ allPath.injectPath = {
 };
 
 // 生产模式任务
-var productionTask = ["index", "data", "images", "fonts", "bower-files", "app-css", "app-js", "templates"];
+var productionTask = ["index", "data", "images", "fonts", "bower-files", "app-css", "app-js", "templates", "audio"];
 
 // 处理index.html相关引入脚本，包括样式和脚本
 gulp.task('index', function () {
@@ -134,11 +134,12 @@ gulp.task('app-js', function() {
 gulp.task('templates', function() {
     return gulp.src(allPath.templates)
         .pipe(plumber())
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        // .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(templateCache({
-            standalone: true
+            standalone: true,
+            root: 'pages'
         }))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(concat(allPath.replacePath.templates))
         .pipe(gulp.dest(allPath.dist + '/.'));
 });

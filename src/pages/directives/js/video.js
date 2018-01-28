@@ -4,7 +4,7 @@
         .directive('videoContainer', function(appUtils) {
             return {
                 restrict: 'EA',
-                templateUrl: 'components/directives/html/video.html',
+                templateUrl: 'pages/directives/html/video.html',
                 scope: {
                     source: '='
                 },
