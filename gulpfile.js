@@ -90,9 +90,9 @@ gulp.task('images', function() {
 
 // 处理字体图标
 gulp.task('fonts', function() {
-    return gulp.src(paths.fonts)
+    return gulp.src(allPath.fonts)
         .pipe(plumber())
-        .pipe(gulp.dest(paths.dist + '/fonts/'));
+        .pipe(gulp.dest(allPath.dist + '/fonts/'));
 });
 
 // 处理bower相关的样式和脚本构建, 只针对css和js进行处理
@@ -195,7 +195,7 @@ gulp.task('connect', function() {
 
 // 监控任务
 gulp.task('watch', function() {
-    gulp.src(allPath.watchPath)
+    gulp.src(allPath.src)
         .pipe(plumber())
         .pipe(watch(allPath.watchPath,function (vinyl) {
             var type = vinyl.event;
