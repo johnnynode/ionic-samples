@@ -134,12 +134,12 @@ gulp.task('app-js', function() {
 gulp.task('templates', function() {
     return gulp.src(allPath.templates)
         .pipe(plumber())
-        // .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(templateCache({
             standalone: true,
             root: 'pages'
         }))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(concat(allPath.replacePath.templates))
         .pipe(gulp.dest(allPath.dist + '/.'));
 });
