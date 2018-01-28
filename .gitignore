@@ -7,3 +7,4 @@ plugins/
 src/lib
 www/
 *.log
+.DS_Store
