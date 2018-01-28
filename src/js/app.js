@@ -1,6 +1,5 @@
 angular.module('ionic-samples', [
         'ionic',
-        'route',
         'config',
         'utils',
         'directives',
