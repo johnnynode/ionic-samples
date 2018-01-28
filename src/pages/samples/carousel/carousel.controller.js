@@ -1,10 +1,10 @@
 angular.module('ionic-samples')
   .controller('MarouselCtrl', [
     '$scope',
+    '$http',
     '$timeout',
     'appUtils',
-    'CarouselData',
-    function ($scope, $timeout, appUtils, CarouselData) {
+    function ($scope, $http, $timeout, appUtils) {
       /* 初始化数据模型 */
       $scope.back = appUtils.back;
       $scope.magList = []; // 杂志列表
@@ -27,6 +27,17 @@ angular.module('ionic-samples')
         getLatest(); // 获取最新杂志
       }
 
+      /* 封装通用获取数据的方法 */
+      function getData(url, callback) {
+        $http.get(url)
+          .success(function (data) {
+            callback && callback(data);
+          })
+          .error(function () {
+            callback && callback(null);
+          });
+      }
+
       /* 图片质量较大 添加延迟隐藏方法 */
       function loadingHide() {
         var t = $timeout(function () {
@@ -41,29 +52,60 @@ angular.module('ionic-samples')
           "magName": "最新"
         };
         $scope.magList.push(json);
-        $scope.magList = $scope.magList.concat(CarouselData.magList);
+        getData('/data/mag-list.json',function (data) {
+          if(!data) {
+            return;
+          }
+          $scope.volList = data;
+          $scope.magList = $scope.magList.concat(data);
+        });
       }
 
       /* 获取最新期 */
       function getLatest() {
-        $scope.volList = CarouselData.latest; // 最新期数据
+        getData('/data/latest.json',function (data) {
+          if(!data) {
+            return;
+          }
+          $scope.volList = data;
+        });
       }
 
       /* 根据杂志code获取该杂志的期 */
       function getVolByMagCode(magCode) {
         switch (magCode) {
           case "ECON":
-            $scope.volList = CarouselData.ecoList;
+            getData('/data/eco-list.json',function (data) {
+              if(!data) {
+                return;
+              }
+              $scope.volList = data;
+            });
             break;
           case "BIOL":
-            $scope.volList = CarouselData.bioList;
+            getData('/data/bio-list.json',function (data) {
+              if(!data) {
+                return;
+              }
+              $scope.volList = data;
+            });
             break;
           case "COMP":
-            $scope.volList = CarouselData.comList;
+            getData('/data/com-list.json',function (data) {
+              if(!data) {
+                return;
+              }
+              $scope.volList = data;
+            });
             break;
           default:
-            console.log("not match");
-            $scope.volList = CarouselData.latest; // 分配给最新期
+            // 分配给最新期
+            getData('/data/latest.json',function (data) {
+              if(!data) {
+                return;
+              }
+              $scope.volList = data;
+            });
         }
       }
 
