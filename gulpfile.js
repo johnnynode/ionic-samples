@@ -39,6 +39,7 @@ var platform = process.platform, // 判断操作系统
 var allPath = {
     src: './src',
     dist: './www',
+    watchPath:['./src', './bower.json'],
     index:'./src/index.html',
     // 用于替换的路径
     replacePath: {
@@ -66,7 +67,7 @@ allPath.injectPath = {
 };
 
 // 生产模式任务
-var productionTask = [];
+var productionTask = ["index", "data",  "images", "bower-files", "app-css", "app-js", "templates"];
 
 // 处理index.html相关引入脚本，包括样式和脚本
 gulp.task('index', function () {
@@ -184,9 +185,15 @@ gulp.task('connect', function() {
 
 // 监控任务
 gulp.task('watch', function() {
-    gulp.src(allPath.src)
+    gulp.src(allPath.watchPath)
         .pipe(plumber())
-        .pipe(watch(allPath.src))
+        .pipe(watch(allPath.watchPath,function (vinyl) {
+            var type = vinyl.event;
+            // 监控添加和移除的加入
+            if (type === 'add' || type === 'unlink') {
+                runSequence(['inject']); // 执行插入功能
+            }
+        }))
         .pipe(connect.reload());
 });
 
@@ -197,22 +204,18 @@ gulp.task('copy', function() {
         .pipe(gulp.dest(allPath.dist + '/'));
 });
 
+// 复制数据任务，在实际项目中不存在
+gulp.task('data', function() {
+    return gulp.src(allPath.src + '/data/**')
+        .pipe(plumber())
+        .pipe(gulp.dest(allPath.dist + '/data'));
+});
+
 // audio 任务 根据原项目添加，大部分情况是线上的，不会存在这个任务
 gulp.task('audio', function() {
     return gulp.src(allPath.src + '/audio/**', { base: allPath.src })
         .pipe(plumber())
         .pipe(gulp.dest(allPath.dist + '/'));
-});
-
-// css 任务
-gulp.task('css', function() {
-    return gulp.src(allPath.src + '/css/**', { base: allPath.src })
-        .pipe(plumber())
-        .pipe(_if('*.scss', sass.sync()))
-        .pipe(cleanCSS({ rebase: false }))
-        .pipe(concat('/css/app.min.css'))
-        .pipe(plumber())
-        .pipe(gulp.dest(allPath.dist));
 });
 
 // 打开浏览器的任务
@@ -227,10 +230,10 @@ gulp.task('open', function() {
 });
 
 //运行Gulp时,搭建起跨域服务器 开发模式下
-gulp.task('server', ['connect'], function() {
+gulp.task('server', function() {
     connectFlag = 0;
     portFlag = 0;
-    runSequence(['watch', 'open']);
+    runSequence(['connect', 'watch', 'open']);
 });
 
 // 开始构建 todo
@@ -244,8 +247,8 @@ gulp.task('build', ['clean'], function() {
 });
 
 // 构建之后开启服务器
-gulp.task('build-server', ['connect'], function() {
+gulp.task('build-server', function() {
     connectFlag = 1;
     portFlag = 1;
-    runSequence(['open']);
+    runSequence(['connect', 'open']);
 });
