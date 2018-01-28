@@ -17,6 +17,7 @@
         "gulp-inject": "^4.3.0",
         "gulp-ng-annotate": "^2.1.0",
         "gulp-open": "^2.1.0",
+        "gulp-order": "^1.1.1",
         "gulp-plumber": "^1.1.0",
         "gulp-postcss": "^7.0.1",
         "gulp-sass": "^3.1.0",

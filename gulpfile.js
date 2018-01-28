@@ -22,6 +22,7 @@ var gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     del = require('del'), // 清空文件和文件夹
     open = require('gulp-open'),
+    order = require("gulp-order"), // 判断引入优先级
     stripDebug = require('gulp-strip-debug'), // Strip console, alert, and debugger statements
     _if = require('gulp-if'); // 引用判断
 
@@ -41,6 +42,7 @@ var allPath = {
     dist: './www',
     watchPath:['./src', './bower.json'],
     index:'./src/index.html',
+    fonts:['./src/fonts/**/*', './src/lib/ionic/release/fonts/**/*'],
     // 用于替换的路径
     replacePath: {
         'bowerCss': 'app/vendor.' + timeStamp + '.min.css',
@@ -67,7 +69,7 @@ allPath.injectPath = {
 };
 
 // 生产模式任务
-var productionTask = ["index", "data",  "images", "bower-files", "app-css", "app-js", "templates"];
+var productionTask = ["index", "data", "images", "fonts", "bower-files", "app-css", "app-js", "templates"];
 
 // 处理index.html相关引入脚本，包括样式和脚本
 gulp.task('index', function () {
@@ -86,11 +88,19 @@ gulp.task('images', function() {
         .pipe(gulp.dest(allPath.dist + '/images'));
 });
 
+// 处理字体图标
+gulp.task('fonts', function() {
+    return gulp.src(paths.fonts)
+        .pipe(plumber())
+        .pipe(gulp.dest(paths.dist + '/fonts/'));
+});
+
 // 处理bower相关的样式和脚本构建, 只针对css和js进行处理
 gulp.task('bower-files', function() {
     return gulp.src(allPath.injectPath.bowerFiles)
         .pipe(plumber())
-        .pipe(_if('*.css', cleanCSS({compatibility: 'ie8',rebase: true})))
+        .pipe(order(["ionic.bundle.min.js"]))
+        .pipe(_if('*.css', cleanCSS({rebase: true})))
         .pipe(_if('*.css', concat(allPath.replacePath.bowerCss)))
         .pipe(_if('*.css', gulp.dest(allPath.dist + '/.')))
         .pipe(_if('*.js', uglify()))
@@ -103,7 +113,7 @@ gulp.task('app-css', function() {
     return gulp.src(allPath.appCss)
         .pipe(plumber())
         // todo sass
-        .pipe(cleanCSS({compatibility: 'ie8',rebase: true}))
+        .pipe(cleanCSS({rebase: true}))
         .pipe(postcss([autoprefixer()]))
         .pipe(concat(allPath.replacePath.appCss))
         .pipe(gulp.dest(allPath.dist + '/.'));
@@ -138,7 +148,7 @@ gulp.task('inject', function () {
     gulp.src(allPath.index)
         .pipe(plumber())
         // 注入bower相关的 css 和 js
-        .pipe(inject(gulp.src(allPath.injectPath.bowerFiles, {read: false}), {name:'bower', relative: true}))
+        .pipe(inject(gulp.src(allPath.injectPath.bowerFiles, {read: false}).pipe(order(["ionic.bundle.min.js"])), {name:'bower', relative: true}))
         // 注入自己模块的css
         .pipe(inject(gulp.src(allPath.injectPath.appCss, {read: false}), {starttag: '<!-- inject:appCss:{{ext}} -->', relative: true}))
         // 注入自己模块的js
