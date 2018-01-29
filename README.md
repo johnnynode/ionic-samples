@@ -1,6 +1,6 @@
 # ionic v1 的 tab app 模板演示
 
-## 克隆
+## 🔥 克隆
 - $ `git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1`
 
 ## 🔥 安装
