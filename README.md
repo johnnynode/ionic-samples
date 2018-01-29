@@ -18,6 +18,10 @@
 - $ `gulp build-server`
 
 
+## 必要说明
+- src 目录是源码目录
+- www 目录是构建后的输出目录
+
 ## 关于samples
 
 - pdf 如果pdf长时间打不开，请翻墙，pdf预览地址是：https://mozilla.github.io/pdf.js/web/viewer.html
