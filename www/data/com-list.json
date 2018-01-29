@@ -1,0 +1,27 @@
+[
+  {
+    "coverimg": "images/carousel/comp01.jpg",
+    "title": "计算语言学",
+    "magCode": "COMP"
+  },
+  {
+    "coverimg": "images/carousel/comp02.jpg",
+    "title": "机器学习",
+    "magCode": "COMP"
+  },
+  {
+    "coverimg": "images/carousel/comp03.jpg",
+    "title": "云计算",
+    "magCode": "COMP"
+  },
+  {
+    "coverimg": "images/carousel/comp04.jpg",
+    "title": "互联网创新应用",
+    "magCode": "COMP"
+  },
+  {
+    "coverimg": "images/carousel/comp05.jpg",
+    "title": "移动计算",
+    "magCode": "COMP"
+  }
+]

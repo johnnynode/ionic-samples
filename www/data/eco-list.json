@@ -1,0 +1,27 @@
+[
+  {
+    "coverimg": "images/carousel/econ01.jpg",
+    "title": "经济增长",
+    "magCode": "ECON"
+  },
+  {
+    "coverimg": "images/carousel/econ02.jpg",
+    "title": "绿色经济",
+    "magCode": "ECON"
+  },
+  {
+    "coverimg": "images/carousel/econ03.jpg",
+    "title": "网络经济",
+    "magCode": "ECON"
+  },
+  {
+    "coverimg": "images/carousel/econ04.jpg",
+    "title": "蓝海战略",
+    "magCode": "ECON"
+  },
+  {
+    "coverimg": "images/carousel/econ05.jpg",
+    "title": "电子商务市场",
+    "magCode": "ECON"
+  }
+]
