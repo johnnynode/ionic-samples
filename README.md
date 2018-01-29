@@ -21,9 +21,10 @@
 - src 目录是源码目录
 - www 目录是构建后的输出目录
 - 不要直接打包, 一些数据是通过http的方式请求的，在手机上的请求，路径会出现问题，需要自己成自己的数据(比如通过service提供数据)再打包。
-- pdf 如果pdf长时间打不开，请翻墙，pdf预览地址是：https://mozilla.github.io/pdf.js/web/viewer.html , 可修改成你们自己的pdf路径
+- pdf 如果pdf长时间打不开，请翻墙，pdf预览地址是：https://mozilla.github.io/pdf.js/web/viewer.html , 可修改成你们自己的pdf路径,只提供演示, 
 - 视频源地址是videogular官网上的一个视频demo地址：http://static.videogular.com/assets/videos/videogular.mp4
 - 音频源使用网上链接易失效，存放于本地audio文件夹下：src/audio/music.mp3
+- 关于跨域问题，详见gulp-connect的api, 在gulpfile中已写上了demo
 
 ## PdfLoading
 - [pdf展示效果示例](./mds/pdf.md)
