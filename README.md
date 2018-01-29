@@ -3,18 +3,18 @@
 ## 克隆
 - $ `git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1`
 
-## 安装
+## 🔥 安装
 - $ `cd ionic-sample`
 - $ `npm i` 或 $ `yarn install`
 - $ `bower install --force` (manual operation not in scripts)
 
-## 运行
-- $ `gulp server` 
+## 🔥 运行
+- $ `gulp server` (摆脱了通过 $ `ionic serve` 来构建的问题)
 
-## 构建
+## 🔥 构建
 - $ `gulp build`
 
-## 构建后测试运行
+## 🔥 构建后测试运行
 - $ `gulp build-server`
 
 ## 关于samples
