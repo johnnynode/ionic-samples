@@ -181,11 +181,11 @@ gulp.task('connect', function() {
         middleware: function(connect, opt) {
             return [
                 // 这里做跨域处理
-                proxy(["/pdf"], {
-                    target: 'https://mozilla.github.io',
+                proxy(["/api"], {
+                    target: '',
                     changeOrigin: true,
                     pathRewrite: {
-                        '^/pdf': '/'
+                        '^/api': '/'
                     }
                 })
             ]
