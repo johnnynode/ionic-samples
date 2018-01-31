@@ -5,7 +5,7 @@
 
 ## 🔥 安装
 - $ `cd ionic-sample`
-- $ `npm i` 或 $ `yarn install`
+- $ `yarn install` or $ `npm i`
 - $ `bower install --force` (manual operation not in scripts)
 
 ## 🔥 运行

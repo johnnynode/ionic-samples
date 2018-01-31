@@ -180,6 +180,7 @@ gulp.task('connect', function() {
         port: portFlag ? 8012 : 9012,
         middleware: function(connect, opt) {
             return [
+                /*
                 // 这里做跨域处理
                 proxy(["/api"], {
                     target: '',
@@ -188,6 +189,7 @@ gulp.task('connect', function() {
                         '^/api': '/'
                     }
                 })
+                */
             ]
         }
     });
