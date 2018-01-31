@@ -7,3 +7,4 @@ plugins/
 src/lib
 *.log
 .DS_Store
+.sourcemaps
