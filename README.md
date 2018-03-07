@@ -1,7 +1,7 @@
 # ionic v1 tab app template demo
 
 ## Branches
-- Current branch is ionic-v1, switch to [ionic-angular branch](https://github.com/johnnynode/ionic-samples/tree/ionic-angular)
+- Current branch is **ionic-v1**, switch to [ionic-angular branch](https://github.com/johnnynode/ionic-samples/tree/ionic-angular)
 
 ## Clone
 - $ `git clone -b ionic-v1 git@github.com:johnnynode/ionic-sample.git  --depth 1`
