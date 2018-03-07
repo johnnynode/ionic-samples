@@ -7,9 +7,9 @@ Cordova reference documentation:
 - Icons: https://cordova.apache.org/docs/en/latest/config_ref/images.html
 - Splash Screens: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/
 
-### About different icon
+### About different icons
 
 - icon.android.png is for android platform
 - icon.ios.png is for ios platform
-- make sure that you replace icon.png with one of them in different platform to generate new icons like blow:
+- make sure that you replace icon.png with one of them in different platforms to generate new icons like blow, and beware of remaining the name 'icon.png':
 - $ `ionic cordova resources android` or $ `ionic cordova resources ios`
