@@ -7,4 +7,4 @@ some samples for ionic usage
 
 ## BeWare
 
-- Not finished yet! Suspended!
+- Not finished yet! Suspended, no time for this!
