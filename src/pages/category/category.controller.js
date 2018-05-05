@@ -33,7 +33,7 @@ angular.module('ionic-samples')
                     dataAll.mapContainer[k] = dataAll.cate[k].length; // 存储每个字母结点代表的分类的学科个数。
                 }
 
-                $rootScope.$broadcast("cate:boxCount", dataAll.abc.length); // 使用广播方式传递数据
+                $scope.$broadcast("cate:boxCount", dataAll.abc.length); // 使用广播方式传递数据
                 dataAll.abc.sort(); // 从A到Z排序
             }
 
@@ -127,7 +127,7 @@ angular.module('ionic-samples')
                 var boxHeight = 0; // 初始化盒子高度
 
                 /* 接收获取的广播数据 */
-                $rootScope.$on("cate:boxCount", function(e, data) {
+                scope.$on("cate:boxCount", function(e, data) {
                     if (!data) {
                         return;
                     }
