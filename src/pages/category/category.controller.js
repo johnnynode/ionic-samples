@@ -1,12 +1,11 @@
 angular.module('ionic-samples')
     .controller('CategoryCtrl', [
         '$scope',
-        '$rootScope',
         '$http',
         '$timeout',
         '$ionicScrollDelegate',
         'appUtils',
-        function($scope, $rootScope, $http, $timeout, $ionicScrollDelegate, appUtils) {
+        function($scope, $http, $timeout, $ionicScrollDelegate, appUtils) {
             /* 初始化数据模型 */
             $scope.isLoading = false;
             var fn = $scope.fn = {};
@@ -110,7 +109,7 @@ angular.module('ionic-samples')
 
         }
     ])
-    .directive('categoryTouchBar', function($rootScope) {
+    .directive('categoryTouchBar', function() {
         return {
             restrict: 'EA',
             replace: true,
