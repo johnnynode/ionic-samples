@@ -40,7 +40,7 @@
   <br />
   <br />
   <div>
-    <a href="http://blog.csdn.net/tyro_java/article/details/73058952">Related Blog</a>
+    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73058952">Related Blog</a>
   </div>
 </div>
 
@@ -51,7 +51,7 @@
   <br />
   <br />
   <div>
-    <a href="http://blog.csdn.net/tyro_java/article/details/73043991">Related Blog</a>
+    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73043991">Related Blog</a>
   </div>
 </div>
 
@@ -62,7 +62,7 @@
   <br />
   <br />
   <div>
-    <a href="http://blog.csdn.net/tyro_java/article/details/73040008">Related Blog</a>
+    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73040008">Related Blog</a>
   </div>
 </div>
 
@@ -73,7 +73,7 @@
   <br />
   <br />
   <div>
-    <a href="http://blog.csdn.net/tyro_java/article/details/77622455">Related Blog</a>
+    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/77622455">Related Blog</a>
   </div>
 </div>
 
@@ -84,7 +84,7 @@
   <br />
   <br />
   <div>
-    <a href="http://blog.csdn.net/tyro_java/article/details/77937586">Related Blog</a>
+    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/77937586">Related Blog</a>
   </div>
 </div>
 
