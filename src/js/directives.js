@@ -1,3 +1,4 @@
+/* 此处的指令是通用的指令 */
 (function(angular) {
     'use strict';
     angular.module('ionic-samples')
