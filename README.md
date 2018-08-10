@@ -43,39 +43,35 @@
 
 ## AudioPlay
 
-- [Related Blog](http://blog.csdn.net/tyro_java/article/details/73043991) 
-
 <div align=center>
   <img src="./screenshot/audio.gif"/>
+  <a href="http://blog.csdn.net/tyro_java/article/details/73043991">Related Blog</a>
 </div>
 
 ## VideoPlay
 
-- [Related Blog](http://blog.csdn.net/tyro_java/article/details/73040008) 
-
 <div align=center>
   <img src="./screenshot/video.gif"/>
+  <a href="http://blog.csdn.net/tyro_java/article/details/73040008">Related Blog</a>
 </div>
 
 ## CategoryScrolling
 
-- [Related Blog](http://blog.csdn.net/tyro_java/article/details/77622455) 
-
 <div align=center>
   <img src="./screenshot/cate.gif"/>
+  <a href="http://blog.csdn.net/tyro_java/article/details/77622455">Related Blog</a>
 </div>
 
 ## CarouselScaleBanners
 
-- [Related Blog](http://blog.csdn.net/tyro_java/article/details/77937586)
-
 <div align=center>
   <img src="./screenshot/scaleBanners.gif"/>
+  <a href="http://blog.csdn.net/tyro_java/article/details/77937586">Related Blog</a>
 </div>
 
-## Splash
+## About Splash
 
-- https://github.com/johnnynode/ionic-splash-demo
+- [ionic-splash-demo@johnnynode](https://github.com/johnnynode/ionic-splash-demo)
 
 ## License
 
