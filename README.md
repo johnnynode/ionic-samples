@@ -37,6 +37,8 @@
 
 <div align=center>
   <img src="./screenshot/pdf.gif"/>
+  <br />
+  <br />
   <div>
     <a href="http://blog.csdn.net/tyro_java/article/details/73058952">Related Blog</a>
   </div>
@@ -46,6 +48,8 @@
 
 <div align=center>
   <img src="./screenshot/audio.gif"/>
+  <br />
+  <br />
   <div>
     <a href="http://blog.csdn.net/tyro_java/article/details/73043991">Related Blog</a>
   </div>
@@ -55,6 +59,8 @@
 
 <div align=center>
   <img src="./screenshot/video.gif"/>
+  <br />
+  <br />
   <div>
     <a href="http://blog.csdn.net/tyro_java/article/details/73040008">Related Blog</a>
   </div>
@@ -64,6 +70,8 @@
 
 <div align=center>
   <img src="./screenshot/cate.gif"/>
+  <br />
+  <br />
   <div>
     <a href="http://blog.csdn.net/tyro_java/article/details/77622455">Related Blog</a>
   </div>
@@ -73,6 +81,8 @@
 
 <div align=center>
   <img src="./screenshot/scaleBanners.gif"/>
+  <br />
+  <br />
   <div>
     <a href="http://blog.csdn.net/tyro_java/article/details/77937586">Related Blog</a>
   </div>
