@@ -39,9 +39,7 @@
   <img src="./screenshot/pdf.gif"/>
   <br />
   <br />
-  <div>
-    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73058952">PdfLoading Blog</a>
-  </div>
+  <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73058952">PdfLoading Blog</a>
 </div>
 
 ## AudioPlay
@@ -50,9 +48,7 @@
   <img src="./screenshot/audio.gif"/>
   <br />
   <br />
-  <div>
-    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73043991">AudioPlay Blog</a>
-  </div>
+  <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73043991">AudioPlay Blog</a>
 </div>
 
 ## VideoPlay
@@ -61,9 +57,7 @@
   <img src="./screenshot/video.gif"/>
   <br />
   <br />
-  <div>
-    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73040008">VideoPlay Blog</a>
-  </div>
+  <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73040008">VideoPlay Blog</a>
 </div>
 
 ## CategoryScrolling
@@ -72,9 +66,7 @@
   <img src="./screenshot/cate.gif"/>
   <br />
   <br />
-  <div>
-    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/77622455">CategoryScrolling Blog</a>
-  </div>
+  <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/77622455">CategoryScrolling Blog</a>
 </div>
 
 ## CarouselScaleBanners
@@ -83,9 +75,7 @@
   <img src="./screenshot/scaleBanners.gif"/>
   <br />
   <br />
-  <div>
-    <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/77937586">CarouselScaleBanners Blog</a>
-  </div>
+  <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/77937586">CarouselScaleBanners Blog</a>
 </div>
 
 ## About Splash
