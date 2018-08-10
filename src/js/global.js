@@ -13,6 +13,7 @@
                         
                   }
               }
-          }
+          },
+          dataUrl: 'https://raw.githubusercontent.com/johnnynode/ionic-samples/ionic-v1/src/data'
       })
 })(angular);

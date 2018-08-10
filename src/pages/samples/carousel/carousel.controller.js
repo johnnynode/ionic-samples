@@ -4,7 +4,8 @@ angular.module('ionic-samples')
     '$http',
     '$timeout',
     'appUtils',
-    function ($scope, $http, $timeout, appUtils) {
+    'global',
+    function ($scope, $http, $timeout, appUtils, global) {
       /* 初始化数据模型 */
       $scope.back = appUtils.back;
       $scope.magList = []; // 杂志列表
@@ -17,7 +18,8 @@ angular.module('ionic-samples')
       $scope.$on('$ionicView.beforeEnter', function () {
         $scope.spread = false; // 默认不展开
       });
-
+      
+      // 页面初始化
       pageInit();
 
       /* 页面初始化 */
@@ -52,7 +54,7 @@ angular.module('ionic-samples')
           "magName": "最新"
         };
         $scope.magList.push(json);
-        getData('/data/mag-list.json',function (data) {
+        getData(global.dataUrl + '/mag-list.json',function (data) {
           if(!data) {
             return;
           }
@@ -62,7 +64,7 @@ angular.module('ionic-samples')
 
       /* 获取最新期 */
       function getLatest() {
-        getData('/data/latest.json',function (data) {
+        getData(global.dataUrl + '/latest.json',function (data) {
           if(!data) {
             return;
           }
@@ -74,7 +76,7 @@ angular.module('ionic-samples')
       function getVolByMagCode(magCode) {
         switch (magCode) {
           case "ECON":
-            getData('/data/eco-list.json',function (data) {
+            getData(global.dataUrl + '/eco-list.json',function (data) {
               if(!data) {
                 return;
               }
@@ -82,7 +84,7 @@ angular.module('ionic-samples')
             });
             break;
           case "BIOL":
-            getData('/data/bio-list.json',function (data) {
+            getData(global.dataUrl + '/bio-list.json',function (data) {
               if(!data) {
                 return;
               }
@@ -90,7 +92,7 @@ angular.module('ionic-samples')
             });
             break;
           case "COMP":
-            getData('/data/com-list.json',function (data) {
+            getData(global.dataUrl + '/com-list.json',function (data) {
               if(!data) {
                 return;
               }
@@ -99,7 +101,7 @@ angular.module('ionic-samples')
             break;
           default:
             // 分配给最新期
-            getData('/data/latest.json',function (data) {
+            getData(global.dataUrl + '/latest.json',function (data) {
               if(!data) {
                 return;
               }
