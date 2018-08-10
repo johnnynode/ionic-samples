@@ -4,7 +4,7 @@
         .directive('mp3Container', function($timeout, appUtils) {
             return {
                 restrict: 'EA',
-                templateUrl: 'pages/directives/html/mp3.html',
+                templateUrl: 'components/directives/html/mp3.html',
                 scope: {
                     source: '='
                 },
