@@ -3,10 +3,13 @@ angular.module('ionic-samples')
         '$scope',
         '$sce',
         'appUtils',
-        function($scope, $sce, appUtils) {
+        'global',
+        function($scope, $sce, appUtils, global) {
             $scope.back = appUtils.back;
             var renderData = $scope.renderData = {};
-            renderData.source = $sce.trustAsResourceUrl('audio/music.mp3');
+            var sourceUrl = global.mediaUrl + '/audio/music.mp3';
+            console.log("sourceUrl: ", sourceUrl);
+            renderData.source = $sce.trustAsResourceUrl(sourceUrl);
 
             // 接收广播事件
             $scope.$on('audio:playState', function(event, data) {
