@@ -36,46 +36,46 @@
 ## PdfLoading
 
 <div align=center>
-  <img src="./screenshot/pdf.gif"/>
-  <br />
-  <br />
   <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73058952">PdfLoading Blog</a>
+  <br />
+  <br />
+  <img src="./screenshot/pdf.gif"/>
 </div>
 
 ## AudioPlay
 
 <div align=center>
-  <img src="./screenshot/audio.gif"/>
-  <br />
-  <br />
   <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73043991">AudioPlay Blog</a>
+  <br />
+  <br />
+  <img src="./screenshot/audio.gif"/>
 </div>
 
 ## VideoPlay
 
 <div align=center>
-  <img src="./screenshot/video.gif"/>
-  <br />
-  <br />
   <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/73040008">VideoPlay Blog</a>
+  <br />
+  <br />
+  <img src="./screenshot/video.gif"/>
 </div>
 
 ## CategoryScrolling
 
 <div align=center>
-  <img src="./screenshot/cate.gif"/>
-  <br />
-  <br />
   <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/77622455">CategoryScrolling Blog</a>
+  <br />
+  <br />
+  <img src="./screenshot/cate.gif"/>
 </div>
 
 ## CarouselScaleBanners
 
 <div align=center>
-  <img src="./screenshot/scaleBanners.gif"/>
-  <br />
-  <br />
   <a target="_blank" href="http://blog.csdn.net/tyro_java/article/details/77937586">CarouselScaleBanners Blog</a>
+  <br />
+  <br />
+  <img src="./screenshot/scaleBanners.gif"/>
 </div>
 
 ## About Splash
