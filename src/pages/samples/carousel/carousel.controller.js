@@ -63,17 +63,21 @@ angular.module('ionic-samples')
       }
 
       /* 获取最新期 */
-      function getLatest() {
+      function getLatest(callback) {
         getData(global.dataUrl + '/latest.json',function (data) {
           if(!data) {
             return;
           }
           $scope.volList = data;
+          callback && callback();
         });
       }
 
       /* 根据杂志code获取该杂志的期 */
-      function getVolByMagCode(magCode) {
+      function getVolByMagCode(magCode, callback) {
+        var cb = function() {
+          callback && callback();
+        }
         switch (magCode) {
           case "ECON":
             getData(global.dataUrl + '/eco-list.json',function (data) {
@@ -81,6 +85,7 @@ angular.module('ionic-samples')
                 return;
               }
               $scope.volList = data;
+              cb();
             });
             break;
           case "BIOL":
@@ -89,6 +94,7 @@ angular.module('ionic-samples')
                 return;
               }
               $scope.volList = data;
+              cb();
             });
             break;
           case "COMP":
@@ -97,6 +103,7 @@ angular.module('ionic-samples')
                 return;
               }
               $scope.volList = data;
+              cb();
             });
             break;
           default:
@@ -106,6 +113,7 @@ angular.module('ionic-samples')
                 return;
               }
               $scope.volList = data;
+              cb();
             });
         }
       }
@@ -121,14 +129,12 @@ angular.module('ionic-samples')
         $scope.isLoading = $scope.curMag !== item.magName; // 表示切换了
         // 没有loading ,不去请求数据
         if (!$scope.isLoading) return;
-        // 有loading, 设置效果
-        loadingHide();
         // 点击第一个获取最新数据
         if (!index) {
           $scope.curMag = '最新';
-          return getLatest();
+          return getLatest(loadingHide);
         }
-        getVolByMagCode(item.magCode);
+        getVolByMagCode(item.magCode, loadingHide);
         $scope.curMag = item.magName;
       }
     }
