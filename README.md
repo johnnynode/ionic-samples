@@ -82,6 +82,10 @@
 
 - [ionic-splash-demo@johnnynode](https://github.com/johnnynode/ionic-splash-demo)
 
+## More Samples
+
+coming soon...
+
 ## License
 
 MIT
