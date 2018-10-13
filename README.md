@@ -11,8 +11,8 @@
 ## Install
 
 - $ `cd ionic-sample`
-- $ `yarn install` or $ `npm i`
-- $ `bower install --force` (manual operation not in scripts)
+- $ `yarn install` or $ `npm i` or $ `cnpm i`
+- $ `bower install --force` (manual operation not in npm scripts)
 
 ## Run
 
